@@ -1,0 +1,6 @@
+package com.hercan.personneltrackingwithfacerecognition.authorizedpersonnellogin
+
+import androidx.fragment.app.Fragment
+import com.hercan.personneltrackingwithfacerecognition.R
+
+class AuthorizedPersonnelLoginFragment : Fragment(R.layout.fragment_authorized_personnel_login)
