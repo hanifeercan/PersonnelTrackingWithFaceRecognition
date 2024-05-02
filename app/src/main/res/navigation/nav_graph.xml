@@ -16,7 +16,16 @@
     </fragment>
     <fragment
         android:id="@+id/administratorLoginFragment"
-        android:name="com.hercan.personneltrackingwithfacerecognition.administratologin.AdministratorLoginFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.administratorlogin.AdministratorLoginFragment"
         android:label="fragment_administrator_login"
-        tools:layout="@layout/fragment_administrator_login" />
+        tools:layout="@layout/fragment_administrator_login">
+        <action
+            android:id="@+id/navigateToAdministratorSingUpFragment"
+            app:destination="@id/administratorSingUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/administratorSingUpFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.administratorsingup.AdministratorSingUpFragment"
+        android:label="fragment_administrator_sing_up"
+        tools:layout="@layout/fragment_administrator_sing_up" />
 </navigation>

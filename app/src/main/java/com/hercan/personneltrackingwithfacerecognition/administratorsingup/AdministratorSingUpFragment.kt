@@ -1,0 +1,6 @@
+package com.hercan.personneltrackingwithfacerecognition.administratorsingup
+
+import androidx.fragment.app.Fragment
+import com.hercan.personneltrackingwithfacerecognition.R
+
+class AdministratorSingUpFragment : Fragment(R.layout.fragment_administrator_sing_up)

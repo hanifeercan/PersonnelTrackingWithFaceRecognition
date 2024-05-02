@@ -12,4 +12,6 @@
     <string name="yonetici_girisi">YÖNETİCİ GİRİŞİ</string>
     <string name="yonetici_hesabin_yok_mu">Yönetici hesabın yok mu?</string>
     <string name="kayit_ol">Kayıt Ol!</string>
+    <string name="yonetici_hesabi_olustur">YÖNETİCİ HESABI OLUŞTUR</string>
+    <string name="olustur">OLUŞTUR</string>
 </resources>
