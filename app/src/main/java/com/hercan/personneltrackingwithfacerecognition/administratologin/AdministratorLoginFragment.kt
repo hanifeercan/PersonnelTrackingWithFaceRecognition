@@ -1,0 +1,6 @@
+package com.hercan.personneltrackingwithfacerecognition.administratologin
+
+import androidx.fragment.app.Fragment
+import com.hercan.personneltrackingwithfacerecognition.R
+
+class AdministratorLoginFragment : Fragment(R.layout.fragment_administrator_login)

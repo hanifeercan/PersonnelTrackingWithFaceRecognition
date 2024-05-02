@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/celestial_green"
-    tools:context=".authorizedpersonnellogin.AuthorizedPersonnelLoginFragment">
+    tools:context=".administratologin.AdministratorLoginFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/yetkili_personel_girisi" />
+                android:text="@string/yonetici_girisi" />
 
             <EditText
                 android:id="@+id/et_mail"
@@ -86,15 +86,20 @@
                 android:layout_marginVertical="@dimen/margin_16">
 
                 <TextView
-                    android:id="@+id/tv_admin_login"
+                    style="@style/Text.T1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yonetici_hesabin_yok_mu" />
+
+                <TextView
+                    android:id="@+id/tv_signup"
                     style="@style/Text.T1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:text="@string/yonetici_hesabina_giris"
+                    android:text="@string/kayit_ol"
                     android:textColor="@color/transparent_black" />
             </FrameLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

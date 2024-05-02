@@ -9,5 +9,14 @@
         android:id="@+id/authorizedPersonnelLoginFragment"
         android:name="com.hercan.personneltrackingwithfacerecognition.authorizedpersonnellogin.AuthorizedPersonnelLoginFragment"
         android:label="fragment_authorized_personnel_login"
-        tools:layout="@layout/fragment_authorized_personnel_login" />
+        tools:layout="@layout/fragment_authorized_personnel_login">
+        <action
+            android:id="@+id/navigateToAdministratorLoginFragment"
+            app:destination="@id/administratorLoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/administratorLoginFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.administratologin.AdministratorLoginFragment"
+        android:label="fragment_administrator_login"
+        tools:layout="@layout/fragment_administrator_login" />
 </navigation>

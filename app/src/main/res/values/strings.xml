@@ -7,6 +7,9 @@
     <string name="mail">E-Mail</string>
     <string name="password">Şifre</string>
     <string name="login">GİRİŞ YAP</string>
-    <string name="yonetici_hesabına_giris">Yönetici hesabına giriş</string>
+    <string name="yonetici_hesabina_giris">Yönetici hesabına giriş</string>
     <string name="ic_security">Icon security</string>
+    <string name="yonetici_girisi">YÖNETİCİ GİRİŞİ</string>
+    <string name="yonetici_hesabin_yok_mu">Yönetici hesabın yok mu?</string>
+    <string name="kayit_ol">Kayıt Ol!</string>
 </resources>
