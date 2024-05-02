@@ -68,7 +68,7 @@
                 tools:ignore="VisualLintTextFieldSize" />
 
             <Button
-                android:id="@+id/btn_login"
+                android:id="@+id/btn_sing_up"
                 style="@style/Text.T3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

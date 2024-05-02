@@ -14,4 +14,8 @@
     <string name="kayit_ol">Kayıt Ol!</string>
     <string name="yonetici_hesabi_olustur">YÖNETİCİ HESABI OLUŞTUR</string>
     <string name="olustur">OLUŞTUR</string>
+
+    <string name="e_mail_giriniz">Lütfen e-mail giriniz!</string>
+    <string name="sifre_giriniz">Lütfen şifre giriniz!</string>
+    <string name="giris_yapabilirsiniz">Hesabınız oluşturuldu, artık giriş yapabilirsiniz.</string>
 </resources>

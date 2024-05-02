@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "184615515109",
+    "firebase_url": "https://facerecognition-b323e-default-rtdb.firebaseio.com",
+    "project_id": "facerecognition-b323e",
+    "storage_bucket": "facerecognition-b323e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184615515109:android:b8f6216cefaee8c6ba350c",
+        "android_client_info": {
+          "package_name": "com.hercan.personneltrackingwithfacerecognition"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM8IDTK-YVLw7xliExQzwqNkJnUHeyw1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
