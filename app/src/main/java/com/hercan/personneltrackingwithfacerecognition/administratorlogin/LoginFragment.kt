@@ -10,28 +10,30 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.hercan.personneltrackingwithfacerecognition.R
 import com.hercan.personneltrackingwithfacerecognition.binding.viewBinding
-import com.hercan.personneltrackingwithfacerecognition.databinding.FragmentAdministratorLoginBinding
+import com.hercan.personneltrackingwithfacerecognition.databinding.FragmentLoginBinding
 
-class AdministratorLoginFragment : Fragment(R.layout.fragment_administrator_login) {
-    private val
-            binding by viewBinding(FragmentAdministratorLoginBinding::bind)
+class LoginFragment : Fragment(R.layout.fragment_login) {
+    private val binding by viewBinding(FragmentLoginBinding::bind)
     private lateinit var auth: FirebaseAuth
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.tvSignup.setOnClickListener {
-            navigateToAdminSingUpFragment()
-        }
-        binding.btnLogin.setOnClickListener { login() }
+
         auth = Firebase.auth
+        bindUI()
+    }
+
+    private fun bindUI() = with(binding) {
+        tvSignup.setOnClickListener { navigateToAdminSingUpFragment() }
+        btnLogin.setOnClickListener { login() }
     }
 
     private fun navigateToAdminSingUpFragment() {
-        findNavController().navigate(AdministratorLoginFragmentDirections.navigateToAdministratorSingUpFragment())
+        findNavController().navigate(LoginFragmentDirections.navigateToAdministratorSingUpFragment())
     }
 
     private fun navigateToHomeFragment() {
-        findNavController().navigate(AdministratorLoginFragmentDirections.navigateToHomeFragment())
+        findNavController().navigate(LoginFragmentDirections.navigateToHomeFragment())
     }
 
     private fun login() {
