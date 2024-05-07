@@ -3,19 +3,25 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="yetkili_personel_girisi">YETKİLİ PERSONEL GİRİŞİ</string>
     <string name="mail">E-Mail</string>
     <string name="password">Şifre</string>
     <string name="login">GİRİŞ YAP</string>
-    <string name="yonetici_hesabina_giris">Yönetici hesabına giriş</string>
     <string name="ic_security">Icon security</string>
-    <string name="yonetici_girisi">YÖNETİCİ GİRİŞİ</string>
+    <string name="giris">GİRİŞ</string>
     <string name="yonetici_hesabin_yok_mu">Yönetici hesabın yok mu?</string>
     <string name="kayit_ol">Kayıt Ol!</string>
     <string name="yonetici_hesabi_olustur">YÖNETİCİ HESABI OLUŞTUR</string>
     <string name="olustur">OLUŞTUR</string>
+    <string name="yetkilendirilmis_hesap_olustur">YETKİLENDİRİLMİŞ HESAP OLUŞTUR</string>
 
     <string name="e_mail_giriniz">Lütfen e-mail giriniz!</string>
     <string name="sifre_giriniz">Lütfen şifre giriniz!</string>
     <string name="giris_yapabilirsiniz">Hesabınız oluşturuldu, artık giriş yapabilirsiniz.</string>
+
+    <string name="email">email</string>
+    <string name="sifre">şifre</string>
+    <string name="yetki">yetki</string>
+    <string name="guvenlik">güvenlik</string>
+    <string name="yetki_olusturuldu">Yetkilendirme hesabı oluşturuldu. Karışıklık olmaması için tekrar giriş yapmalısınız!</string>
+    <string name="hata_olustu">Bir hata oluştu hesap sisteme kaydedilemedi!</string>
 </resources>
