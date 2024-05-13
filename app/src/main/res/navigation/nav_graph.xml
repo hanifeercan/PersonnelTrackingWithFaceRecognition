@@ -33,6 +33,9 @@
         <action
             android:id="@+id/navigateToLoginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/navigateToAddNewPersonnelFragment"
+            app:destination="@id/addNewPersonnelFragment" />
     </fragment>
     <fragment
         android:id="@+id/createAnAuthorizedAccountFragment"
@@ -43,4 +46,9 @@
             android:id="@+id/navigateToAdministratorLoginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/addNewPersonnelFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.addnewpersonnel.AddNewPersonnelFragment"
+        android:label="fragment_add_new_personnel"
+        tools:layout="@layout/fragment_add_new_personnel" />
 </navigation>

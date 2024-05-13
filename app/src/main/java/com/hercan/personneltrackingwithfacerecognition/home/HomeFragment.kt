@@ -48,6 +48,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun navigateToAddNewPersonnelFragment() {
+        findNavController().navigate((HomeFragmentDirections.navigateToAddNewPersonnelFragment()))
     }
 
     private fun navigateToGetPersonnelDataFragment() {
