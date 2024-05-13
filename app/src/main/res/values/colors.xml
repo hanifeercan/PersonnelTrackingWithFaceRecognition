@@ -6,4 +6,5 @@
     <color name="celestial_green">#A7D397</color>
     <color name="green_hornet">#6A985A</color>
     <color name="transparent_black">#5E000000</color>
+    <color name="transparent">#00000000</color>
 </resources>

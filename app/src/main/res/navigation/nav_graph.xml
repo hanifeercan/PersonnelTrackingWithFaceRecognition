@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/administratorLoginFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
-        android:id="@+id/administratorLoginFragment"
+        android:id="@+id/loginFragment"
         android:name="com.hercan.personneltrackingwithfacerecognition.administratorlogin.LoginFragment"
         android:label="fragment_administrator_login"
         tools:layout="@layout/fragment_login">
@@ -26,18 +26,21 @@
         android:id="@+id/homeFragment"
         android:name="com.hercan.personneltrackingwithfacerecognition.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/navigateToCreateAnAuthorizedAccountFragment"
             app:destination="@id/createAnAuthorizedAccountFragment" />
+        <action
+            android:id="@+id/navigateToLoginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/createAnAuthorizedAccountFragment"
         android:name="com.hercan.personneltrackingwithfacerecognition.createanauthorizedaccount.CreateAnAuthorizedAccountFragment"
         android:label="fragment_create_an_authorized_account"
-        tools:layout="@layout/fragment_create_an_authorized_account" >
+        tools:layout="@layout/fragment_create_an_authorized_account">
         <action
             android:id="@+id/navigateToAdministratorLoginFragment"
-            app:destination="@id/administratorLoginFragment" />
+            app:destination="@id/loginFragment" />
     </fragment>
 </navigation>

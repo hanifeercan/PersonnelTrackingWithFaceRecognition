@@ -18,4 +18,13 @@
     <style name="Text.T3" parent="Text">
         <item name="android:textSize">@dimen/text_size_24</item>
     </style>
+
+    <style name="Text.T4" parent="Text">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/green_hornet</item>
+    </style>
+
+    <style name="Text.T5" parent="Text">
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
 </resources>

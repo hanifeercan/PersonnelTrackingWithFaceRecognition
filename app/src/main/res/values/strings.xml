@@ -24,4 +24,14 @@
     <string name="guvenlik">güvenlik</string>
     <string name="yetki_olusturuldu">Yetkilendirme hesabı oluşturuldu. Karışıklık olmaması için tekrar giriş yapmalısınız!</string>
     <string name="hata_olustu">Bir hata oluştu hesap sisteme kaydedilemedi!</string>
+
+    <string name="personel_bilgileri">PERSONEL BİLGİLERİ</string>
+    <string name="giris_cikis_takibi">GİRİŞ ÇIKIŞ TAKİBİ</string>
+    <string name="yeni_personel_kayit">YENİ PERSONEL KAYIT</string>
+    <string name="yetkilendirme_hesabi_olustur">YENİ YETKİLENDİRME HESABI</string>
+    <string name="anlik_yuz_tanima">ANLIK YÜZ TANIMA</string>
+    <string name="bilinmeyen_giris_takip">BİLİNMEYEN GİRİŞ TAKİP</string>
+
+    <string name="cıkıs">ÇIKIŞ</string>
+    <string name="ic_next">Ikon next</string>
 </resources>
