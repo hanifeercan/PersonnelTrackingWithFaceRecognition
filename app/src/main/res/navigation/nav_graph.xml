@@ -50,5 +50,9 @@
         android:id="@+id/addNewPersonnelFragment"
         android:name="com.hercan.personneltrackingwithfacerecognition.addnewpersonnel.AddNewPersonnelFragment"
         android:label="fragment_add_new_personnel"
-        tools:layout="@layout/fragment_add_new_personnel" />
+        tools:layout="@layout/fragment_add_new_personnel">
+        <action
+            android:id="@+id/navigateToHomeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

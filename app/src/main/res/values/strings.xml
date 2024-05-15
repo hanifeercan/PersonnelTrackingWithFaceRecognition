@@ -43,4 +43,9 @@
     <string name="kayit_tarihi">Kayıt Tarihi</string>
     <string name="kaydet">KAYDET</string>
     <string name="add_photo">add_photo</string>
+
+    <string name="bu_alan_bos_birakilamaz">BU ALAN BOŞ BIRAKILAMAZ</string>
+    <string name="kayit_basarili">Kayıt başarılı!</string>
+    <string name="kayit_basarisiz">Kayıt başarısız!</string>
+    <string name="izin_gerekli">İzin gereklidir!</string>
 </resources>
