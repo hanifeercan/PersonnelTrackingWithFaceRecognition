@@ -9,6 +9,7 @@
 
     <style name="Text.T1" parent="Text">
         <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColorHint">@color/green_hornet</item>
     </style>
 
     <style name="Text.T2" parent="Text">
@@ -26,5 +27,10 @@
 
     <style name="Text.T5" parent="Text">
         <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+
+    <style name="Text.T6" parent="Text">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/cream</item>
     </style>
 </resources>

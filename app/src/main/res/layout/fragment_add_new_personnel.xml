@@ -1,14 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".addnewpersonnel.AddNewPersonnelFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginHorizontal="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_225"
+        android:layout_marginBottom="@dimen/margin_32"
+        android:background="@drawable/bg_card_view"
+        android:backgroundTint="@color/cream"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fl_photo_back" />
 
-</FrameLayout>
+    <FrameLayout
+        android:id="@+id/fl_photo_back"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_180"
+        android:layout_marginHorizontal="@dimen/margin_48"
+        android:layout_marginTop="@dimen/margin_60"
+        android:background="@drawable/bg_card_view"
+        android:backgroundTint="@color/transparent_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_personnel_photo" />
+
+    <ImageView
+        android:id="@+id/iv_personnel_photo"
+        android:layout_width="@dimen/size_180"
+        android:layout_height="@dimen/size_200"
+        android:layout_marginTop="@dimen/margin_48"
+        android:background="@drawable/ic_add_picture"
+        android:contentDescription="@string/add_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_32"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fl_photo_back">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_48"
+            android:layout_marginHorizontal="@dimen/margin_48"
+            android:layout_marginVertical="@dimen/margin_8"
+            android:background="@drawable/bg_card_view"
+            android:backgroundTint="@color/green_spring_rain">
+
+            <EditText
+                android:id="@+id/et_name"
+                style="@style/Text.T1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:hint="@string/isim"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/margin_16"
+                tools:ignore="VisualLintTextFieldSize" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_48"
+            android:layout_marginHorizontal="@dimen/margin_48"
+            android:layout_marginVertical="@dimen/margin_8"
+            android:background="@drawable/bg_card_view"
+            android:backgroundTint="@color/green_spring_rain">
+
+            <EditText
+                android:id="@+id/et_surname"
+                style="@style/Text.T1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:hint="@string/soyisim"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/margin_16"
+                tools:ignore="VisualLintTextFieldSize" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_48"
+            android:layout_marginHorizontal="@dimen/margin_48"
+            android:layout_marginVertical="@dimen/margin_8"
+            android:background="@drawable/bg_card_view"
+            android:backgroundTint="@color/green_spring_rain">
+
+            <EditText
+                android:id="@+id/et_tc"
+                style="@style/Text.T1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:hint="@string/tc"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:paddingHorizontal="@dimen/margin_16"
+                tools:ignore="VisualLintTextFieldSize" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_48"
+            android:layout_marginHorizontal="@dimen/margin_48"
+            android:layout_marginVertical="@dimen/margin_8"
+            android:background="@drawable/bg_card_view"
+            android:backgroundTint="@color/green_spring_rain">
+
+            <EditText
+                android:id="@+id/et_birthday"
+                style="@style/Text.T1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:hint="@string/dogum_tarihi"
+                android:importantForAutofill="no"
+                android:inputType="date"
+                android:paddingHorizontal="@dimen/margin_16"
+                tools:ignore="VisualLintTextFieldSize" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_48"
+            android:layout_marginHorizontal="@dimen/margin_48"
+            android:layout_marginVertical="@dimen/margin_8"
+            android:background="@drawable/bg_card_view"
+            android:backgroundTint="@color/green_spring_rain">
+
+            <EditText
+                android:id="@+id/et_department"
+                style="@style/Text.T1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:hint="@string/departman"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/margin_16"
+                tools:ignore="VisualLintTextFieldSize" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_48"
+            android:layout_marginHorizontal="@dimen/margin_48"
+            android:layout_marginVertical="@dimen/margin_8"
+            android:background="@drawable/bg_card_view"
+            android:backgroundTint="@color/green_spring_rain">
+
+            <EditText
+                android:id="@+id/et_registration_date"
+                style="@style/Text.T1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:hint="@string/kayit_tarihi"
+                android:importantForAutofill="no"
+                android:inputType="date"
+                android:paddingHorizontal="@dimen/margin_16"
+                tools:ignore="VisualLintTextFieldSize" />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/btn_save"
+            style="@style/Text.T6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginVertical="@dimen/margin_8"
+            android:layout_marginEnd="@dimen/margin_48"
+            android:backgroundTint="@color/transparent_green"
+            android:paddingHorizontal="@dimen/margin_32"
+            android:text="@string/kaydet" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

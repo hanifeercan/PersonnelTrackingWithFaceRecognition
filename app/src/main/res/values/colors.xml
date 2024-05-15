@@ -7,4 +7,7 @@
     <color name="green_hornet">#6A985A</color>
     <color name="transparent_black">#5E000000</color>
     <color name="transparent">#00000000</color>
+    <color name="transparent_green">#D20A1E02</color>
+    <color name="cream">#EEF0E5</color>
+    <color name="green_spring_rain">#B6C4B6</color>
 </resources>

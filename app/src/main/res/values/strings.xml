@@ -34,4 +34,13 @@
 
     <string name="cıkıs">ÇIKIŞ</string>
     <string name="ic_next">Ikon next</string>
+
+    <string name="isim">İsim</string>
+    <string name="soyisim">Soyisim</string>
+    <string name="tc">TC/Yabancı Kimlik Numarası </string>
+    <string name="dogum_tarihi">Doğum Tarihi</string>
+    <string name="departman">Departman/Birim</string>
+    <string name="kayit_tarihi">Kayıt Tarihi</string>
+    <string name="kaydet">KAYDET</string>
+    <string name="add_photo">add_photo</string>
 </resources>
