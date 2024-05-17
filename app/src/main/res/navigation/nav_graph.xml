@@ -36,6 +36,9 @@
         <action
             android:id="@+id/navigateToAddNewPersonnelFragment"
             app:destination="@id/addNewPersonnelFragment" />
+        <action
+            android:id="@+id/navigateToGetPersonnelDataFragment"
+            app:destination="@id/getPersonnelDataFragment" />
     </fragment>
     <fragment
         android:id="@+id/createAnAuthorizedAccountFragment"
@@ -54,5 +57,23 @@
         <action
             android:id="@+id/navigateToHomeFragment"
             app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/getPersonnelDataFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.getpersonneldata.GetPersonnelDataFragment"
+        android:label="fragment_get_personnel_data"
+        tools:layout="@layout/fragment_get_personnel_data">
+        <action
+            android:id="@+id/navigateToGetPersonnelDataDetailFragment"
+            app:destination="@id/getPersonnelDataDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/getPersonnelDataDetailFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.getpersonneldata.GetPersonnelDataDetailFragment"
+        android:label="fragment_get_personnel_data_detail"
+        tools:layout="@layout/fragment_get_personnel_data_detail">
+        <argument
+            android:name="personnel"
+            app:argType="com.hercan.personneltrackingwithfacerecognition.getpersonneldata.Personnel" />
     </fragment>
 </navigation>

@@ -52,6 +52,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun navigateToGetPersonnelDataFragment() {
+        findNavController().navigate((HomeFragmentDirections.navigateToGetPersonnelDataFragment()))
     }
 
     private fun navigateToFaceRecognitionFragment() {

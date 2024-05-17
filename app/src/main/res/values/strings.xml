@@ -48,4 +48,10 @@
     <string name="kayit_basarili">Kayıt başarılı!</string>
     <string name="kayit_basarisiz">Kayıt başarısız!</string>
     <string name="izin_gerekli">İzin gereklidir!</string>
+
+    <string name="tc_">Kimlik Numarası:</string>
+    <string name="dogum_tarihi_">Doğum Tarihi:</string>
+    <string name="departman_">Departman/Birim:</string>
+    <string name="kayit_tarihi_">Kayıt Tarihi:</string>
+    <string name="not_found_folder">not found folder</string>
 </resources>

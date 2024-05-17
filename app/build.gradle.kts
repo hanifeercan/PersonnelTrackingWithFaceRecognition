@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs")
     id("com.google.gms.google-services")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -59,4 +60,5 @@ dependencies {
     implementation("com.google.firebase:firebase-storage:21.0.0")
 
     implementation("androidx.palette:palette-ktx:1.0.0")
+    implementation("com.squareup.picasso:picasso:2.8")
 }
