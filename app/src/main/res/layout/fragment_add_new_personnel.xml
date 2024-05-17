@@ -110,7 +110,7 @@
                 android:autofillHints=""
                 android:hint="@string/tc"
                 android:importantForAutofill="no"
-                android:inputType="number"
+                android:inputType="numberSigned"
                 android:paddingHorizontal="@dimen/margin_16"
                 tools:ignore="VisualLintTextFieldSize" />
         </FrameLayout>
@@ -131,7 +131,7 @@
                 android:autofillHints=""
                 android:hint="@string/dogum_tarihi"
                 android:importantForAutofill="no"
-                android:inputType="date"
+                android:inputType="text"
                 android:paddingHorizontal="@dimen/margin_16"
                 tools:ignore="VisualLintTextFieldSize" />
         </FrameLayout>
@@ -173,7 +173,7 @@
                 android:autofillHints=""
                 android:hint="@string/kayit_tarihi"
                 android:importantForAutofill="no"
-                android:inputType="date"
+                android:inputType="text"
                 android:paddingHorizontal="@dimen/margin_16"
                 tools:ignore="VisualLintTextFieldSize" />
         </FrameLayout>
