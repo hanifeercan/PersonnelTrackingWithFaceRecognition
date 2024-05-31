@@ -39,6 +39,9 @@
         <action
             android:id="@+id/navigateToGetPersonnelDataFragment"
             app:destination="@id/getPersonnelDataFragment" />
+        <action
+            android:id="@+id/navigateToDateListFragment"
+            app:destination="@id/dateListFragment" />
     </fragment>
     <fragment
         android:id="@+id/createAnAuthorizedAccountFragment"
@@ -75,5 +78,35 @@
         <argument
             android:name="personnel"
             app:argType="com.hercan.personneltrackingwithfacerecognition.getpersonneldata.Personnel" />
+    </fragment>
+    <fragment
+        android:id="@+id/dateListFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.tracking.datelist.DateListFragment"
+        android:label="fragment_login_and_out_tracking"
+        tools:layout="@layout/fragment_date_list">
+        <action
+            android:id="@+id/navigateToPersonnelTrackingListFragment"
+            app:destination="@id/personnelTrackingListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personnelTrackingListFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.tracking.personneltracking.PersonnelTrackingListFragment"
+        android:label="fragment_personnel_tracking_list"
+        tools:layout="@layout/fragment_personnel_tracking_list">
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <action
+            android:id="@+id/ToPersonnelTrackingDetailFragment"
+            app:destination="@id/personnelTrackingDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personnelTrackingDetailFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.tracking.personneltrackingdetail.PersonnelTrackingDetailFragment"
+        android:label="fragment_personnel_tracking_detail"
+        tools:layout="@layout/fragment_personnel_tracking_detail">
+        <argument
+            android:name="personnel"
+            app:argType="com.hercan.personneltrackingwithfacerecognition.tracking.personneltracking.PersonnelTrackingItem" />
     </fragment>
 </navigation>

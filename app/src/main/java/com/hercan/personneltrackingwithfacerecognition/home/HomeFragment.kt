@@ -48,17 +48,18 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun navigateToAddNewPersonnelFragment() {
-        findNavController().navigate((HomeFragmentDirections.navigateToAddNewPersonnelFragment()))
+        findNavController().navigate(HomeFragmentDirections.navigateToAddNewPersonnelFragment())
     }
 
     private fun navigateToGetPersonnelDataFragment() {
-        findNavController().navigate((HomeFragmentDirections.navigateToGetPersonnelDataFragment()))
+        findNavController().navigate(HomeFragmentDirections.navigateToGetPersonnelDataFragment())
     }
 
     private fun navigateToFaceRecognitionFragment() {
     }
 
     private fun navigateToGetPersonnelTrackingDataFragment() {
+        findNavController().navigate(HomeFragmentDirections.navigateToDateListFragment())
     }
 
     private fun navigateToGetStrangerTrackingDataFragment() {
