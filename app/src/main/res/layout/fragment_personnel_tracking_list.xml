@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tracking.personneltracking.PersonnelTrackingListFragment">
+    tools:context=".ui.tracking.personneltracking.PersonnelTrackingListFragment">
 
-    <com.hercan.personneltrackingwithfacerecognition.home.HomeBackgroundCustomView
+    <com.hercan.personneltrackingwithfacerecognition.ui.home.HomeBackgroundCustomView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

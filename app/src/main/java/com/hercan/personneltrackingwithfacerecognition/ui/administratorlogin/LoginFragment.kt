@@ -1,4 +1,4 @@
-package com.hercan.personneltrackingwithfacerecognition.administratorlogin
+package com.hercan.personneltrackingwithfacerecognition.ui.administratorlogin
 
 import android.os.Bundle
 import android.view.View

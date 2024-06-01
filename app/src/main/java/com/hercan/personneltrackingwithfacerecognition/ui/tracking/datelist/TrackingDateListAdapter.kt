@@ -1,4 +1,4 @@
-package com.hercan.personneltrackingwithfacerecognition.tracking.datelist
+package com.hercan.personneltrackingwithfacerecognition.ui.tracking.datelist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

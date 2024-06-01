@@ -5,7 +5,7 @@
     android:id="@+id/layout_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".addnewpersonnel.AddNewPersonnelFragment">
+    tools:context=".ui.addnewpersonnel.AddNewPersonnelFragment">
 
     <FrameLayout
         android:layout_width="match_parent"

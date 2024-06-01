@@ -1,4 +1,4 @@
-package com.hercan.personneltrackingwithfacerecognition.home
+package com.hercan.personneltrackingwithfacerecognition.ui.home
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes

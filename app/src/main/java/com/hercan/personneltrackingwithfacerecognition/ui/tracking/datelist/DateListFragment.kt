@@ -1,4 +1,4 @@
-package com.hercan.personneltrackingwithfacerecognition.getpersonneldata
+package com.hercan.personneltrackingwithfacerecognition.ui.tracking.datelist
 
 import android.os.Bundle
 import android.view.View
@@ -11,13 +11,13 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.hercan.personneltrackingwithfacerecognition.R
 import com.hercan.personneltrackingwithfacerecognition.binding.viewBinding
-import com.hercan.personneltrackingwithfacerecognition.databinding.FragmentGetPersonnelDataBinding
+import com.hercan.personneltrackingwithfacerecognition.databinding.FragmentDateListBinding
 
-class GetPersonnelDataFragment : Fragment(R.layout.fragment_get_personnel_data) {
+class DateListFragment : Fragment(R.layout.fragment_date_list) {
 
-    private val binding by viewBinding(FragmentGetPersonnelDataBinding::bind)
-    private var list = ArrayList<Personnel>()
-    private lateinit var adapter: PersonnelListAdapter
+    private val binding by viewBinding(FragmentDateListBinding::bind)
+    private var list = ArrayList<String>()
+    private lateinit var adapter: TrackingDateListAdapter
     private lateinit var auth: FirebaseAuth
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -29,17 +29,17 @@ class GetPersonnelDataFragment : Fragment(R.layout.fragment_get_personnel_data) 
 
     private fun bindUI() = with(binding) {
         list = ArrayList()
-        rvPersonnelList.layoutManager = LinearLayoutManager(activity)
-        rvPersonnelList.setHasFixedSize(true)
-        adapter = PersonnelListAdapter(ArrayList())
-        rvPersonnelList.adapter = adapter
+        rvDateList.layoutManager = LinearLayoutManager(activity)
+        rvDateList.setHasFixedSize(true)
+        adapter = TrackingDateListAdapter(ArrayList())
+        rvDateList.adapter = adapter
         getData()
     }
 
     private fun getData() {
         val currentUser = auth.currentUser
         val db = FirebaseFirestore.getInstance()
-        db.collection("sirket").document(currentUser?.email.toString()).collection("personnel")
+        db.collection("sirket").document(currentUser?.email.toString()).collection("tracking")
             .addSnapshotListener { value, _ ->
                 if (value != null) {
                     if (!value.isEmpty) {
@@ -47,40 +47,42 @@ class GetPersonnelDataFragment : Fragment(R.layout.fragment_get_personnel_data) 
                         for (item in doc) {
                             binding.progressBar.visibility = View.GONE
                             binding.ivNotFolder.visibility = View.GONE
-                            binding.rvPersonnelList.visibility = View.VISIBLE
-                            list.add(item.toPersonnel())
+                            binding.rvDateList.visibility = View.VISIBLE
+                            list.add(item.id)
 
                         }
                         if (list.isEmpty()) {
                             binding.progressBar.visibility = View.GONE
                             binding.ivNotFolder.visibility = View.VISIBLE
-                            binding.rvPersonnelList.visibility = View.GONE
+                            binding.rvDateList.visibility = View.GONE
                         }
                         bindAdapter()
                     } else {
                         binding.progressBar.visibility = View.GONE
                         binding.ivNotFolder.visibility = View.VISIBLE
-                        binding.rvPersonnelList.visibility = View.GONE
+                        binding.rvDateList.visibility = View.GONE
                     }
                 } else {
                     binding.progressBar.visibility = View.GONE
                     binding.ivNotFolder.visibility = View.VISIBLE
-                    binding.rvPersonnelList.visibility = View.GONE
+                    binding.rvDateList.visibility = View.GONE
                 }
             }
     }
 
     private fun bindAdapter() {
-        adapter = PersonnelListAdapter(list)
-        binding.rvPersonnelList.adapter = adapter
+        adapter = TrackingDateListAdapter(list)
+        binding.rvDateList.adapter = adapter
         adapter.setItemClickListener {
             navigateToDetail(it)
         }
     }
 
-    private fun navigateToDetail(item: Personnel) {
+    private fun navigateToDetail(str: String) {
         findNavController().navigate(
-            GetPersonnelDataFragmentDirections.navigateToGetPersonnelDataDetailFragment(item)
+            DateListFragmentDirections.navigateToPersonnelTrackingListFragment(
+                str
+            )
         )
     }
 }

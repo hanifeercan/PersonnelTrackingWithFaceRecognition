@@ -1,4 +1,4 @@
-package com.hercan.personneltrackingwithfacerecognition.home
+package com.hercan.personneltrackingwithfacerecognition.ui.home
 
 import android.os.Bundle
 import android.view.View
@@ -19,29 +19,29 @@ import com.hercan.personneltrackingwithfacerecognition.databinding.FragmentHomeB
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
-    private lateinit var auth: FirebaseAuth
-    private val binding by viewBinding(FragmentHomeBinding::bind)
-    private lateinit var viewModel: HomeViewModel
-    private lateinit var firestore: FirebaseFirestore
-    private var authority: String = "guvenlik"
+        private lateinit var auth: FirebaseAuth
+        private val binding by viewBinding(FragmentHomeBinding::bind)
+        private lateinit var viewModel: HomeViewModel
+        private lateinit var firestore: FirebaseFirestore
+        private var authority: String = "guvenlik"
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(requireActivity())[HomeViewModel::class.java]
-        bindUI(authority)
+            viewModel = ViewModelProvider(requireActivity())[HomeViewModel::class.java]
+            bindUI(authority)
 
-        auth = Firebase.auth
-        firestore = Firebase.firestore
-        firestore.collectionGroup("sirket").get().addOnSuccessListener { documents ->
-            for (document in documents) {
-                if (document.id == auth.currentUser?.email) {
-                    authority = document.get("yetki").toString()
-                    bindUI(authority)
+            auth = Firebase.auth
+            firestore = Firebase.firestore
+            firestore.collectionGroup("sirket").get().addOnSuccessListener { documents ->
+                for (document in documents) {
+                    if (document.id == auth.currentUser?.email) {
+                        authority = document.get("yetki").toString()
+                        bindUI(authority)
+                    }
                 }
             }
         }
-    }
 
     private fun navigateToCreateAnAuthorizedAccountFragment() {
         findNavController().navigate(HomeFragmentDirections.navigateToCreateAnAuthorizedAccountFragment())

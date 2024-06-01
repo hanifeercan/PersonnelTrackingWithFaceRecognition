@@ -1,4 +1,4 @@
-package com.hercan.personneltrackingwithfacerecognition.tracking.personneltracking
+package com.hercan.personneltrackingwithfacerecognition.ui.tracking.personneltracking
 
 import android.os.Parcelable
 import com.google.firebase.Timestamp

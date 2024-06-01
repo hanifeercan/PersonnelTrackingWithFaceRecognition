@@ -1,4 +1,4 @@
-package com.hercan.personneltrackingwithfacerecognition.home
+package com.hercan.personneltrackingwithfacerecognition.ui.home
 
 import android.content.Context
 import android.graphics.Canvas

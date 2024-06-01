@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.hercan.personneltrackingwithfacerecognition.administratorlogin.LoginFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.ui.administratorlogin.LoginFragment"
         android:label="fragment_administrator_login"
         tools:layout="@layout/fragment_login">
         <action
@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/administratorSingUpFragment"
-        android:name="com.hercan.personneltrackingwithfacerecognition.administratorsingup.AdministratorSingUpFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.ui.administratorsingup.AdministratorSingUpFragment"
         android:label="fragment_administrator_sing_up"
         tools:layout="@layout/fragment_administrator_sing_up" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.hercan.personneltrackingwithfacerecognition.home.HomeFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/createAnAuthorizedAccountFragment"
-        android:name="com.hercan.personneltrackingwithfacerecognition.createanauthorizedaccount.CreateAnAuthorizedAccountFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.ui.createanauthorizedaccount.CreateAnAuthorizedAccountFragment"
         android:label="fragment_create_an_authorized_account"
         tools:layout="@layout/fragment_create_an_authorized_account">
         <action
@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/addNewPersonnelFragment"
-        android:name="com.hercan.personneltrackingwithfacerecognition.addnewpersonnel.AddNewPersonnelFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.ui.addnewpersonnel.AddNewPersonnelFragment"
         android:label="fragment_add_new_personnel"
         tools:layout="@layout/fragment_add_new_personnel">
         <action
@@ -63,7 +63,7 @@
     </fragment>
     <fragment
         android:id="@+id/getPersonnelDataFragment"
-        android:name="com.hercan.personneltrackingwithfacerecognition.getpersonneldata.GetPersonnelDataFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.ui.getpersonneldata.GetPersonnelDataFragment"
         android:label="fragment_get_personnel_data"
         tools:layout="@layout/fragment_get_personnel_data">
         <action
@@ -72,16 +72,16 @@
     </fragment>
     <fragment
         android:id="@+id/getPersonnelDataDetailFragment"
-        android:name="com.hercan.personneltrackingwithfacerecognition.getpersonneldata.GetPersonnelDataDetailFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.ui.getpersonneldata.GetPersonnelDataDetailFragment"
         android:label="fragment_get_personnel_data_detail"
         tools:layout="@layout/fragment_get_personnel_data_detail">
         <argument
             android:name="personnel"
-            app:argType="com.hercan.personneltrackingwithfacerecognition.getpersonneldata.Personnel" />
+            app:argType="com.hercan.personneltrackingwithfacerecognition.ui.getpersonneldata.Personnel" />
     </fragment>
     <fragment
         android:id="@+id/dateListFragment"
-        android:name="com.hercan.personneltrackingwithfacerecognition.tracking.datelist.DateListFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.ui.tracking.datelist.DateListFragment"
         android:label="fragment_login_and_out_tracking"
         tools:layout="@layout/fragment_date_list">
         <action
@@ -90,7 +90,7 @@
     </fragment>
     <fragment
         android:id="@+id/personnelTrackingListFragment"
-        android:name="com.hercan.personneltrackingwithfacerecognition.tracking.personneltracking.PersonnelTrackingListFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.ui.tracking.personneltracking.PersonnelTrackingListFragment"
         android:label="fragment_personnel_tracking_list"
         tools:layout="@layout/fragment_personnel_tracking_list">
         <argument
@@ -102,11 +102,11 @@
     </fragment>
     <fragment
         android:id="@+id/personnelTrackingDetailFragment"
-        android:name="com.hercan.personneltrackingwithfacerecognition.tracking.personneltrackingdetail.PersonnelTrackingDetailFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.ui.tracking.personneltrackingdetail.PersonnelTrackingDetailFragment"
         android:label="fragment_personnel_tracking_detail"
         tools:layout="@layout/fragment_personnel_tracking_detail">
         <argument
             android:name="personnel"
-            app:argType="com.hercan.personneltrackingwithfacerecognition.tracking.personneltracking.PersonnelTrackingItem" />
+            app:argType="com.hercan.personneltrackingwithfacerecognition.ui.tracking.personneltracking.PersonnelTrackingItem" />
     </fragment>
 </navigation>

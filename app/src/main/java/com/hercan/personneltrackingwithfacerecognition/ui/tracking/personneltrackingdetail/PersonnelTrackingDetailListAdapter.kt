@@ -1,10 +1,10 @@
-package com.hercan.personneltrackingwithfacerecognition.tracking.personneltrackingdetail
+package com.hercan.personneltrackingwithfacerecognition.ui.tracking.personneltrackingdetail
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.hercan.personneltrackingwithfacerecognition.databinding.ItemTrackingDetailBinding
-import com.hercan.personneltrackingwithfacerecognition.tracking.personneltracking.TrackingTimes
+import com.hercan.personneltrackingwithfacerecognition.ui.tracking.personneltracking.TrackingTimes
 
 class PersonnelTrackingDetailListAdapter(
     private val login: ArrayList<TrackingTimes>,

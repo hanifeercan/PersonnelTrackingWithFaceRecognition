@@ -1,4 +1,4 @@
-package com.hercan.personneltrackingwithfacerecognition.addnewpersonnel
+package com.hercan.personneltrackingwithfacerecognition.ui.addnewpersonnel
 
 import android.app.Activity
 import android.content.Intent

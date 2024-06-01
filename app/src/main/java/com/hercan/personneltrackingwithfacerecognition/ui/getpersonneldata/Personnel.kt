@@ -1,4 +1,4 @@
-package com.hercan.personneltrackingwithfacerecognition.getpersonneldata
+package com.hercan.personneltrackingwithfacerecognition.ui.getpersonneldata
 
 import android.os.Parcelable
 import com.google.firebase.firestore.DocumentSnapshot

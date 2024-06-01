@@ -1,4 +1,4 @@
-package com.hercan.personneltrackingwithfacerecognition.tracking.personneltrackingdetail
+package com.hercan.personneltrackingwithfacerecognition.ui.tracking.personneltrackingdetail
 
 import android.os.Bundle
 import android.view.View

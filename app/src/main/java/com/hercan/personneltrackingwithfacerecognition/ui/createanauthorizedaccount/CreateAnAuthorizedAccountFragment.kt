@@ -1,4 +1,4 @@
-package com.hercan.personneltrackingwithfacerecognition.administratorsingup
+package com.hercan.personneltrackingwithfacerecognition.ui.createanauthorizedaccount
 
 import android.os.Bundle
 import android.view.View
@@ -12,11 +12,10 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.firestore
 import com.hercan.personneltrackingwithfacerecognition.R
 import com.hercan.personneltrackingwithfacerecognition.binding.viewBinding
-import com.hercan.personneltrackingwithfacerecognition.databinding.FragmentAdministratorSingUpBinding
+import com.hercan.personneltrackingwithfacerecognition.databinding.FragmentCreateAnAuthorizedAccountBinding
 
-class AdministratorSingUpFragment : Fragment(R.layout.fragment_administrator_sing_up) {
-
-    private val binding by viewBinding(FragmentAdministratorSingUpBinding::bind)
+class CreateAnAuthorizedAccountFragment : Fragment(R.layout.fragment_create_an_authorized_account) {
+    private val binding by viewBinding(FragmentCreateAnAuthorizedAccountBinding::bind)
     private lateinit var auth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
 
@@ -25,17 +24,14 @@ class AdministratorSingUpFragment : Fragment(R.layout.fragment_administrator_sin
 
         auth = Firebase.auth
         firestore = Firebase.firestore
-        binding.btnSingUp.setOnClickListener { signup() }
+
+        binding.btnCreate.setOnClickListener { create() }
     }
 
-    private fun login() {
-        Toast.makeText(activity, R.string.giris_yapabilirsiniz, Toast.LENGTH_LONG).show()
-        findNavController().popBackStack()
-    }
-
-    private fun signup() {
+    private fun create() {
         val email = binding.etMail.text.toString()
         val password = binding.etPassword.text.toString()
+        val currentUser = auth.currentUser
 
         if (email == "") {
             Toast.makeText(activity, R.string.e_mail_giriniz, Toast.LENGTH_LONG).show()
@@ -47,14 +43,22 @@ class AdministratorSingUpFragment : Fragment(R.layout.fragment_administrator_sin
                 val postMap = hashMapOf<String, Any>()
                 postMap["email"] = email
                 postMap["sifre"] = password
-                postMap["yetki"] = "yonetici"
+                postMap["yetki"] = "guvenlik"
+                postMap["yonetici"] = currentUser?.email.toString()
 
                 firestore.collection("sirket").document(email).set(postMap).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        login()
+                        if (auth.currentUser != null) {
+                            auth.signOut()
+                            Toast.makeText(activity, R.string.yetki_olusturuldu, Toast.LENGTH_LONG)
+                                .show()
+                            findNavController().navigate(CreateAnAuthorizedAccountFragmentDirections.navigateToAdministratorLoginFragment())
+                        }
                     } else {
                         Toast.makeText(activity, R.string.hata_olustu, Toast.LENGTH_LONG).show()
                     }
+                }.addOnFailureListener {
+                    Toast.makeText(activity, it.localizedMessage, Toast.LENGTH_LONG).show()
                 }
             }
         }
