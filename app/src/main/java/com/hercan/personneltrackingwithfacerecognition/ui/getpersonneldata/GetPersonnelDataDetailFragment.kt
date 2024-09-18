@@ -1,7 +1,9 @@
 package com.hercan.personneltrackingwithfacerecognition.ui.getpersonneldata
 
+import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -38,5 +40,13 @@ class GetPersonnelDataDetailFragment : Fragment(R.layout.fragment_get_personnel_
                 Picasso.get().load(personnel?.photo).into(ivPersonnelPhoto)
             }
         }
+
+        val gradientDrawable = GradientDrawable(
+            GradientDrawable.Orientation.BOTTOM_TOP, intArrayOf(
+                ContextCompat.getColor(requireContext(), android.R.color.white),
+                ContextCompat.getColor(requireContext(), R.color.green_hornet)
+            )
+        )
+        layoutBackground.background = gradientDrawable
     }
 }
