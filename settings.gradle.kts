@@ -14,5 +14,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "PersonnelTrackingWithFaceRecognition"
-include(":app")
+include("app")
  
