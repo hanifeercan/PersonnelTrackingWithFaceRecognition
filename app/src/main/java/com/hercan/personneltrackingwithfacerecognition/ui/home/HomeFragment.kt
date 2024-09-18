@@ -2,6 +2,8 @@ package com.hercan.personneltrackingwithfacerecognition.ui.home
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
@@ -19,29 +21,53 @@ import com.hercan.personneltrackingwithfacerecognition.databinding.FragmentHomeB
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
-        private lateinit var auth: FirebaseAuth
-        private val binding by viewBinding(FragmentHomeBinding::bind)
-        private lateinit var viewModel: HomeViewModel
-        private lateinit var firestore: FirebaseFirestore
-        private var authority: String = "guvenlik"
+    private lateinit var auth: FirebaseAuth
+    private val binding by viewBinding(FragmentHomeBinding::bind)
+    private lateinit var viewModel: HomeViewModel
+    private lateinit var firestore: FirebaseFirestore
+    private var authority: String = "guvenlik"
+    private lateinit var onBackPressedCallback: OnBackPressedCallback
+    private var adminMail: String? = null
 
-        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-            super.onViewCreated(view, savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-            viewModel = ViewModelProvider(requireActivity())[HomeViewModel::class.java]
-            bindUI(authority)
+        viewModel = ViewModelProvider(requireActivity())[HomeViewModel::class.java]
+        bindUI(authority)
 
-            auth = Firebase.auth
-            firestore = Firebase.firestore
-            firestore.collectionGroup("sirket").get().addOnSuccessListener { documents ->
-                for (document in documents) {
-                    if (document.id == auth.currentUser?.email) {
-                        authority = document.get("yetki").toString()
-                        bindUI(authority)
+        auth = Firebase.auth
+        firestore = Firebase.firestore
+        firestore.collectionGroup("sirket").get().addOnSuccessListener { documents ->
+            for (document in documents) {
+                if (document.id == auth.currentUser?.email) {
+                    authority = document.get("yetki").toString()
+                    bindUI(authority)
+                    adminMail = if (authority == "guvenlik") {
+                        document.get("yonetici").toString()
+                    } else {
+                        auth.currentUser?.email
                     }
                 }
             }
         }
+        onBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                requireActivity().finish()
+            }
+        }
+
+        // Geri tuşu callback'ini etkinleştir
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner, onBackPressedCallback
+        )
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        // Fragment view'ı yok edilirken geri tuşu callback'ini kaldır
+        onBackPressedCallback.remove()
+    }
+
 
     private fun navigateToCreateAnAuthorizedAccountFragment() {
         findNavController().navigate(HomeFragmentDirections.navigateToCreateAnAuthorizedAccountFragment())
@@ -56,6 +82,19 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun navigateToFaceRecognitionFragment() {
+        if (adminMail.isNullOrEmpty()) {
+            Toast.makeText(
+                requireContext(),
+                "Yetkiniz hesaplandıktan sonra tekrar deneyiniz!",
+                Toast.LENGTH_LONG
+            ).show()
+        } else {
+            findNavController().navigate(
+                HomeFragmentDirections.navigateToInstantFaceRecognitionFragment(
+                    adminMail!!
+                )
+            )
+        }
     }
 
     private fun navigateToGetPersonnelTrackingDataFragment() {
