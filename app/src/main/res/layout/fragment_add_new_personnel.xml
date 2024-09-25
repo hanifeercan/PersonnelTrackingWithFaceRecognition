@@ -7,187 +7,243 @@
     android:layout_height="match_parent"
     tools:context=".ui.addnewpersonnel.AddNewPersonnelFragment">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginHorizontal="@dimen/margin_24"
-        android:layout_marginTop="@dimen/margin_225"
-        android:layout_marginBottom="@dimen/margin_32"
-        android:background="@drawable/bg_card_view"
-        android:backgroundTint="@color/cream"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fl_photo_back" />
-
-    <FrameLayout
-        android:id="@+id/fl_photo_back"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/size_180"
-        android:layout_marginHorizontal="@dimen/margin_48"
-        android:layout_marginTop="@dimen/margin_60"
-        android:background="@drawable/bg_card_view"
-        android:backgroundTint="@color/transparent_green"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/iv_personnel_photo" />
-
-    <ImageView
-        android:id="@+id/iv_personnel_photo"
-        android:layout_width="@dimen/size_180"
-        android:layout_height="@dimen/size_200"
-        android:layout_marginTop="@dimen/margin_48"
-        android:background="@drawable/ic_add_picture"
-        android:contentDescription="@string/add_photo"
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/transparent_green"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_32"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fl_photo_back">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <FrameLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/size_48"
-            android:layout_marginHorizontal="@dimen/margin_48"
-            android:layout_marginVertical="@dimen/margin_8"
-            android:background="@drawable/bg_card_view"
-            android:backgroundTint="@color/green_spring_rain">
-
-            <EditText
-                android:id="@+id/et_name"
-                style="@style/Text.T1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:autofillHints=""
-                android:hint="@string/isim"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:paddingHorizontal="@dimen/margin_16"
-                tools:ignore="VisualLintTextFieldSize" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_48"
-            android:layout_marginHorizontal="@dimen/margin_48"
-            android:layout_marginVertical="@dimen/margin_8"
-            android:background="@drawable/bg_card_view"
-            android:backgroundTint="@color/green_spring_rain">
-
-            <EditText
-                android:id="@+id/et_surname"
-                style="@style/Text.T1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:autofillHints=""
-                android:hint="@string/soyisim"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:paddingHorizontal="@dimen/margin_16"
-                tools:ignore="VisualLintTextFieldSize" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_48"
-            android:layout_marginHorizontal="@dimen/margin_48"
-            android:layout_marginVertical="@dimen/margin_8"
-            android:background="@drawable/bg_card_view"
-            android:backgroundTint="@color/green_spring_rain">
-
-            <EditText
-                android:id="@+id/et_tc"
-                style="@style/Text.T1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:autofillHints=""
-                android:hint="@string/tc"
-                android:importantForAutofill="no"
-                android:inputType="numberSigned"
-                android:paddingHorizontal="@dimen/margin_16"
-                tools:ignore="VisualLintTextFieldSize" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_48"
-            android:layout_marginHorizontal="@dimen/margin_48"
-            android:layout_marginVertical="@dimen/margin_8"
-            android:background="@drawable/bg_card_view"
-            android:backgroundTint="@color/green_spring_rain">
-
-            <EditText
-                android:id="@+id/et_birthday"
-                style="@style/Text.T1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:autofillHints=""
-                android:hint="@string/dogum_tarihi"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:paddingHorizontal="@dimen/margin_16"
-                tools:ignore="VisualLintTextFieldSize" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_48"
-            android:layout_marginHorizontal="@dimen/margin_48"
-            android:layout_marginVertical="@dimen/margin_8"
-            android:background="@drawable/bg_card_view"
-            android:backgroundTint="@color/green_spring_rain">
-
-            <EditText
-                android:id="@+id/et_department"
-                style="@style/Text.T1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:autofillHints=""
-                android:hint="@string/departman"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:paddingHorizontal="@dimen/margin_16"
-                tools:ignore="VisualLintTextFieldSize" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_48"
-            android:layout_marginHorizontal="@dimen/margin_48"
-            android:layout_marginVertical="@dimen/margin_8"
-            android:background="@drawable/bg_card_view"
-            android:backgroundTint="@color/green_spring_rain">
-
-            <EditText
-                android:id="@+id/et_registration_date"
-                style="@style/Text.T1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:autofillHints=""
-                android:hint="@string/kayit_tarihi"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:paddingHorizontal="@dimen/margin_16"
-                tools:ignore="VisualLintTextFieldSize" />
-        </FrameLayout>
-
-        <Button
-            android:id="@+id/btn_save"
-            style="@style/Text.T6"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginVertical="@dimen/margin_8"
-            android:layout_marginEnd="@dimen/margin_48"
-            android:backgroundTint="@color/transparent_green"
-            android:paddingHorizontal="@dimen/margin_32"
-            android:text="@string/kaydet" />
-    </LinearLayout>
+            android:layout_marginBottom="@dimen/margin_32">
+
+            <FrameLayout
+                android:id="@+id/frame_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/margin_24"
+                android:layout_marginBottom="@dimen/margin_32"
+                android:background="@drawable/bg_card_view"
+                android:backgroundTint="@color/cream"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_personnel_photo">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_24"
+                    android:layout_marginTop="@dimen/margin_48"
+                    android:layout_marginBottom="@dimen/margin_16"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@id/frame_layout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/fl_photo_back">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_48"
+                        android:layout_marginVertical="@dimen/margin_8"
+                        android:background="@drawable/bg_card_view"
+                        android:backgroundTint="@color/green_spring_rain">
+
+                        <EditText
+                            android:id="@+id/et_name"
+                            style="@style/Text.T1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:autofillHints=""
+                            android:hint="@string/isim"
+                            android:importantForAutofill="no"
+                            android:inputType="text"
+                            android:paddingHorizontal="@dimen/margin_16"
+                            tools:ignore="VisualLintTextFieldSize" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_48"
+                        android:layout_marginVertical="@dimen/margin_8"
+                        android:background="@drawable/bg_card_view"
+                        android:backgroundTint="@color/green_spring_rain">
+
+                        <EditText
+                            android:id="@+id/et_surname"
+                            style="@style/Text.T1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:autofillHints=""
+                            android:hint="@string/soyisim"
+                            android:importantForAutofill="no"
+                            android:inputType="text"
+                            android:paddingHorizontal="@dimen/margin_16"
+                            tools:ignore="VisualLintTextFieldSize" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_48"
+                        android:layout_marginVertical="@dimen/margin_8"
+                        android:background="@drawable/bg_card_view"
+                        android:backgroundTint="@color/green_spring_rain">
+
+                        <EditText
+                            android:id="@+id/et_tc"
+                            style="@style/Text.T1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:autofillHints=""
+                            android:hint="@string/tc"
+                            android:importantForAutofill="no"
+                            android:inputType="numberSigned"
+                            android:paddingHorizontal="@dimen/margin_16"
+                            tools:ignore="VisualLintTextFieldSize" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_48"
+                        android:layout_marginVertical="@dimen/margin_8"
+                        android:background="@drawable/bg_card_view"
+                        android:backgroundTint="@color/green_spring_rain">
+
+                        <EditText
+                            android:id="@+id/et_birthday"
+                            style="@style/Text.T1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:autofillHints=""
+                            android:hint="@string/dogum_tarihi"
+                            android:importantForAutofill="no"
+                            android:inputType="text"
+                            android:paddingHorizontal="@dimen/margin_16"
+                            tools:ignore="VisualLintTextFieldSize" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_48"
+                        android:layout_marginVertical="@dimen/margin_8"
+                        android:background="@drawable/bg_card_view"
+                        android:backgroundTint="@color/green_spring_rain">
+
+                        <EditText
+                            android:id="@+id/et_department"
+                            style="@style/Text.T1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:autofillHints=""
+                            android:hint="@string/departman"
+                            android:importantForAutofill="no"
+                            android:inputType="text"
+                            android:paddingHorizontal="@dimen/margin_16"
+                            tools:ignore="VisualLintTextFieldSize" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_48"
+                        android:layout_marginVertical="@dimen/margin_8"
+                        android:background="@drawable/bg_card_view"
+                        android:backgroundTint="@color/green_spring_rain">
+
+                        <EditText
+                            android:id="@+id/et_registration_date"
+                            style="@style/Text.T1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:autofillHints=""
+                            android:hint="@string/kayit_tarihi"
+                            android:importantForAutofill="no"
+                            android:inputType="text"
+                            android:paddingHorizontal="@dimen/margin_16"
+                            tools:ignore="VisualLintTextFieldSize" />
+                    </FrameLayout>
+
+                    <TextView
+                        style="@style/Text.T1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/margin_4"
+                        android:gravity="center"
+                        android:text="Kişiye ait 2 ayrı yüz videosu ekleyiniz!"
+                        android:textColor="@color/green_hornet" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_add_first_video"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginEnd="@dimen/margin_16"
+                            android:background="@drawable/ic_not_folder"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:id="@+id/iv_add_second_video"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="@dimen/margin_16"
+                            android:background="@drawable/ic_not_folder"
+                            android:scaleType="centerCrop" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_save"
+                        style="@style/Text.T6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="@dimen/margin_8"
+                        android:backgroundTint="@color/transparent_green"
+                        android:paddingHorizontal="@dimen/margin_32"
+                        android:text="@string/kaydet" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_photo_back"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_180"
+                android:layout_marginHorizontal="@dimen/margin_48"
+                android:layout_marginTop="@dimen/margin_60"
+                android:background="@drawable/bg_card_view"
+                android:backgroundTint="@color/transparent_green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_personnel_photo" />
+
+            <ImageView
+                android:id="@+id/iv_personnel_photo"
+                android:layout_width="@dimen/size_180"
+                android:layout_height="@dimen/size_200"
+                android:layout_marginTop="@dimen/margin_24"
+                android:background="@drawable/ic_add_picture"
+                android:contentDescription="@string/add_photo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
