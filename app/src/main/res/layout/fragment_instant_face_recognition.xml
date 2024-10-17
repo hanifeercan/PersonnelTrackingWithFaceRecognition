@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.facerecognition.InstantFaceRecognitionFragment">
+
+    <ImageView
+        android:id="@+id/iv_not_folder"
+        android:layout_width="@dimen/size_100"
+        android:layout_height="@dimen/size_100"
+        android:background="@drawable/ic_not_folder"
+        android:contentDescription="@string/not_found_folder"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/transparent_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_225"
+            android:layout_marginBottom="@dimen/margin_32"
+            android:background="@drawable/bg_card_view"
+            android:backgroundTint="@color/cream"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fl_photo_back" />
+
+        <FrameLayout
+            android:id="@+id/fl_photo_back"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_180"
+            android:layout_marginHorizontal="@dimen/margin_48"
+            android:layout_marginTop="@dimen/margin_60"
+            android:background="@drawable/bg_card_view"
+            android:backgroundTint="@color/transparent_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_personnel_photo" />
+
+        <ImageView
+            android:id="@+id/iv_personnel_photo"
+            android:layout_width="@dimen/size_180"
+            android:layout_height="@dimen/size_200"
+            android:layout_marginTop="@dimen/margin_48"
+            android:background="@drawable/ic_photo"
+            android:contentDescription="@string/add_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_60"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fl_photo_back">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48"
+                android:layout_marginHorizontal="@dimen/margin_48"
+                android:layout_marginVertical="@dimen/margin_8"
+                android:background="@drawable/bg_card_view"
+                android:backgroundTint="@color/green_spring_rain"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_name_and_surname"
+                    style="@style/Text.T1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/margin_16"
+                    android:text="@string/isim"
+                    tools:ignore="VisualLintTextFieldSize" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_48"
+                android:layout_marginVertical="@dimen/margin_8"
+                android:background="@drawable/bg_card_view"
+                android:backgroundTint="@color/green_spring_rain"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_48"
+                    android:layout_marginVertical="@dimen/margin_8"
+                    android:background="@drawable/bg_card_view"
+                    android:backgroundTint="@color/green_spring_rain"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Text.T1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/margin_16"
+                        android:text="@string/dogum_tarihi_"
+                        tools:ignore="VisualLintTextFieldSize" />
+
+                    <TextView
+                        android:id="@+id/tv_birthday"
+                        style="@style/Text.T1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/margin_16"
+                        android:text="@string/dogum_tarihi"
+                        tools:ignore="VisualLintTextFieldSize" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_48"
+                    android:layout_marginVertical="@dimen/margin_8"
+                    android:background="@drawable/bg_card_view"
+                    android:backgroundTint="@color/green_spring_rain"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Text.T1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/margin_16"
+                        android:text="@string/departman_"
+                        tools:ignore="VisualLintTextFieldSize" />
+
+                    <TextView
+                        android:id="@+id/tv_department"
+                        style="@style/Text.T1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/margin_16"
+                        android:text="@string/departman"
+                        tools:ignore="VisualLintTextFieldSize" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
