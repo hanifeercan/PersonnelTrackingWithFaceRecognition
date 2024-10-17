@@ -42,6 +42,9 @@
         <action
             android:id="@+id/navigateToDateListFragment"
             app:destination="@id/dateListFragment" />
+        <action
+            android:id="@+id/navigateToInstantFaceRecognitionFragment"
+            app:destination="@id/instantFaceRecognitionFragment" />
     </fragment>
     <fragment
         android:id="@+id/createAnAuthorizedAccountFragment"
@@ -108,5 +111,14 @@
         <argument
             android:name="personnel"
             app:argType="com.hercan.personneltrackingwithfacerecognition.ui.tracking.personneltracking.PersonnelTrackingItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/instantFaceRecognitionFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.ui.facerecognition.InstantFaceRecognitionFragment"
+        android:label="fragment_instant_face_recognition"
+        tools:layout="@layout/fragment_instant_face_recognition" >
+        <argument
+            android:name="adminMail"
+            app:argType="string" />
     </fragment>
 </navigation>
