@@ -45,6 +45,9 @@
         <action
             android:id="@+id/navigateToInstantFaceRecognitionFragment"
             app:destination="@id/instantFaceRecognitionFragment" />
+        <action
+            android:id="@+id/navigateToGetStrangerTrackingDataFragment"
+            app:destination="@id/getStrangerTrackingDataFragment" />
     </fragment>
     <fragment
         android:id="@+id/createAnAuthorizedAccountFragment"
@@ -116,7 +119,16 @@
         android:id="@+id/instantFaceRecognitionFragment"
         android:name="com.hercan.personneltrackingwithfacerecognition.ui.facerecognition.InstantFaceRecognitionFragment"
         android:label="fragment_instant_face_recognition"
-        tools:layout="@layout/fragment_instant_face_recognition" >
+        tools:layout="@layout/fragment_instant_face_recognition">
+        <argument
+            android:name="adminMail"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/getStrangerTrackingDataFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.ui.getstrangertrackingdata.GetStrangerTrackingDataFragment"
+        android:label="fragment_get_stranger_tracking_data"
+        tools:layout="@layout/fragment_get_stranger_tracking_data">
         <argument
             android:name="adminMail"
             app:argType="string" />
