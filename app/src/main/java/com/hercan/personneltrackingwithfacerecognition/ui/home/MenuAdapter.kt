@@ -22,7 +22,7 @@ class MenuAdapter(private val menuList: List<MenuItem>, private val authority: S
             root.setOnClickListener {
                 itemClickListener?.invoke(item)
             }
-            if (position != 4 && position != 5) {
+            if (position != 5) {
                 if (authority == "yonetici") {
                     root.isClickable = true
                     itemMenu.foreground =
