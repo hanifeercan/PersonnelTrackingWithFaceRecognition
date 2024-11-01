@@ -102,6 +102,19 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun navigateToGetStrangerTrackingDataFragment() {
+        if (adminMail.isNullOrEmpty()) {
+            Toast.makeText(
+                requireContext(),
+                "Yetkiniz hesaplandıktan sonra tekrar deneyiniz!",
+                Toast.LENGTH_LONG
+            ).show()
+        } else {
+            findNavController().navigate(
+                HomeFragmentDirections.navigateToGetStrangerTrackingDataFragment(
+                    adminMail!!
+                )
+            )
+        }
     }
 
     private fun bindUI(authority: String) = with(binding) {
@@ -126,8 +139,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                     2 -> navigateToGetPersonnelTrackingDataFragment()
                     3 -> navigateToAddNewPersonnelFragment()
                     4 -> navigateToCreateAnAuthorizedAccountFragment()
-                    5 -> navigateToFaceRecognitionFragment()
-                    6 -> navigateToGetStrangerTrackingDataFragment()
+                    5 -> navigateToGetStrangerTrackingDataFragment()
+                    6 -> navigateToFaceRecognitionFragment()
                 }
             }
         }
