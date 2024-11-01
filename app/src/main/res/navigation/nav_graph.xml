@@ -132,5 +132,17 @@
         <argument
             android:name="adminMail"
             app:argType="string" />
+        <action
+            android:id="@+id/navigateToStrangerTrackingListFragment"
+            app:destination="@id/strangerTrackingListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/strangerTrackingListFragment"
+        android:name="com.hercan.personneltrackingwithfacerecognition.ui.getstrangertrackingdata.StrangerTrackingListFragment"
+        android:label="fragment_stranger_tracking_list"
+        tools:layout="@layout/fragment_stranger_tracking_list" >
+    <argument
+        android:name="datePath"
+        app:argType="string" />
     </fragment>
 </navigation>
