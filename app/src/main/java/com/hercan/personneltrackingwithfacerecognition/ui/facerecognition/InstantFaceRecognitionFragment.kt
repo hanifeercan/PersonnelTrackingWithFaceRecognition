@@ -32,6 +32,7 @@ import java.io.FileOutputStream
 import java.io.IOException
 import java.util.Locale
 
+@Suppress("DEPRECATION")
 @AndroidEntryPoint
 class InstantFaceRecognitionFragment : Fragment(R.layout.fragment_instant_face_recognition) {
 
@@ -40,11 +41,17 @@ class InstantFaceRecognitionFragment : Fragment(R.layout.fragment_instant_face_r
     private var adminMail: String = ""
     private val viewModel: InstantFaceRecognitionViewModel by viewModels()
     private var response: String? = null
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = Firebase.auth
-        dispatchTakePictureIntent()
-        binding.progressBar.visibility = View.VISIBLE
+
+        binding.btnCamera.setOnClickListener {
+            dispatchTakePictureIntent()
+        }
+        binding.btnGallery.setOnClickListener {
+            dispatchPickFromGalleryIntent()
+        }
         binding.ivNotFolder.visibility = View.GONE
         binding.cl.visibility = View.GONE
 
@@ -67,26 +74,31 @@ class InstantFaceRecognitionFragment : Fragment(R.layout.fragment_instant_face_r
     private fun observeViewModelData() {
         viewModel.response.observe(viewLifecycleOwner) {
             response = it
+            binding.cl.visibility = View.VISIBLE
             getPersonnel()
         }
 
         viewModel.isOnLoading.observe(viewLifecycleOwner) {
             if (it) {
                 binding.progressBar.visibility = View.VISIBLE
-                binding.ivNotFolder.visibility = View.GONE
                 binding.cl.visibility = View.GONE
             } else {
                 binding.progressBar.visibility = View.GONE
-                binding.ivNotFolder.visibility = View.GONE
-                binding.cl.visibility = View.VISIBLE
             }
         }
 
         viewModel.isOnError.observe(viewLifecycleOwner) {
-            Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
-            binding.progressBar.visibility = View.GONE
-            binding.ivNotFolder.visibility = View.VISIBLE
-            binding.cl.visibility = View.GONE
+
+            if (it == getString(R.string.no_connection_for_backend)) {
+                binding.tvNoConnection.visibility = View.VISIBLE
+                binding.cl.visibility = View.GONE
+                binding.progressBar.visibility = View.GONE
+            } else {
+                Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
+                binding.progressBar.visibility = View.GONE
+                binding.ivNotFolder.visibility = View.VISIBLE
+                binding.cl.visibility = View.GONE
+            }
         }
     }
 
@@ -100,25 +112,56 @@ class InstantFaceRecognitionFragment : Fragment(R.layout.fragment_instant_face_r
         try {
             startActivityForResult(takePictureIntent, 1)
         } catch (e: ActivityNotFoundException) {
-            Toast.makeText(requireContext(), "Kamera Başlatılamadı!", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), getString(R.string.failed_to_camera_initialize), Toast.LENGTH_LONG).show()
         }
     }
 
+    private fun dispatchPickFromGalleryIntent() {
+        val pickPhotoIntent =
+            Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        try {
+            startActivityForResult(pickPhotoIntent, 2)
+        } catch (e: ActivityNotFoundException) {
+            Toast.makeText(requireContext(), getString(R.string.failed_to_gallery_initialize), Toast.LENGTH_LONG).show()
+        }
+    }
+
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) = runBlocking {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 1 && resultCode == RESULT_OK) {
-            val imageBitmap = data?.extras?.get("data") as Bitmap
-            val file = File(requireContext().cacheDir, "image.jpg")
-            saveBitmapAsJpeg(imageBitmap, file)
-            val requestFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
-            val body = MultipartBody.Part.createFormData("dosya", file.name, requestFile)
-            postViewModel(body)
+
+        if (resultCode == RESULT_OK) {
+            when (requestCode) {
+                1 -> {
+                    val imageBitmap = data?.extras?.get("data") as? Bitmap
+                    imageBitmap?.let {
+                        processAndUploadImage(it)
+                    }
+                }
+
+                2 -> {
+                    val imageUri = data?.data
+                    imageUri?.let {
+                        val imageBitmap =
+                            MediaStore.Images.Media.getBitmap(requireContext().contentResolver, it)
+                        processAndUploadImage(imageBitmap)
+                    }
+                }
+            }
         }
+    }
+
+    private fun processAndUploadImage(imageBitmap: Bitmap) {
+        val file = File(requireContext().cacheDir, "image.jpg")
+        saveBitmapAsJpeg(imageBitmap, file)
+        val requestFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
+        val body = MultipartBody.Part.createFormData("dosya", file.name, requestFile)
+        postViewModel(body)
     }
 
     private fun getPersonnel() {
         if (response != null) {
-            if (response != "unknown") {
+            if (response != "Unknown") {
                 val db = FirebaseFirestore.getInstance()
                 db.collection("sirket").document(adminMail).collection("personnel")
                     .addSnapshotListener { value, _ ->
@@ -144,13 +187,9 @@ class InstantFaceRecognitionFragment : Fragment(R.layout.fragment_instant_face_r
                     }
             } else {
                 binding.progressBar.visibility = View.GONE
-                binding.ivNotFolder.visibility = View.VISIBLE
-                binding.cl.visibility = View.GONE
             }
         } else {
             binding.progressBar.visibility = View.GONE
-            binding.ivNotFolder.visibility = View.VISIBLE
-            binding.cl.visibility = View.GONE
         }
     }
 

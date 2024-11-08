@@ -58,4 +58,8 @@
     <string name="no_connection">Servis bağlantısı sağlanamadı. Servisi yeniden başlatmayı deneyebilir ve bağlantı portlarını kontrol edebilirsiniz.</string>
     <string name="camera">Kamera</string>
     <string name="gallery">Galeri</string>
+
+    <string name="no_connection_for_backend">Servis bağlantısı sağlanamadı.</string>
+    <string name="failed_to_camera_initialize">Kamera Başlatılamadı!</string>
+    <string name="failed_to_gallery_initialize">Galeri Başlatılamadı!</string>
 </resources>
