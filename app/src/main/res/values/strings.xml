@@ -64,4 +64,5 @@
     <string name="failed_to_gallery_initialize">Galeri Başlatılamadı!</string>
 
     <string name="please_add_video">Lütfen video ekleyiniz!</string>
+    <string name="try_again_after_your_authority_is_calculated">Yetkiniz hesaplandıktan sonra tekrar deneyiniz!</string>
 </resources>

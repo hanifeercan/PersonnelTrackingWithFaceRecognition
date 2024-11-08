@@ -56,7 +56,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             }
         }
 
-        // Geri tuşu callback'ini etkinleştir
         requireActivity().onBackPressedDispatcher.addCallback(
             viewLifecycleOwner, onBackPressedCallback
         )
@@ -64,7 +63,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        // Fragment view'ı yok edilirken geri tuşu callback'ini kaldır
         onBackPressedCallback.remove()
     }
 
@@ -85,7 +83,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         if (adminMail.isNullOrEmpty()) {
             Toast.makeText(
                 requireContext(),
-                "Yetkiniz hesaplandıktan sonra tekrar deneyiniz!",
+                getString(R.string.try_again_after_your_authority_is_calculated),
                 Toast.LENGTH_LONG
             ).show()
         } else {
@@ -105,7 +103,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         if (adminMail.isNullOrEmpty()) {
             Toast.makeText(
                 requireContext(),
-                "Yetkiniz hesaplandıktan sonra tekrar deneyiniz!",
+                getString(R.string.try_again_after_your_authority_is_calculated),
                 Toast.LENGTH_LONG
             ).show()
         } else {
