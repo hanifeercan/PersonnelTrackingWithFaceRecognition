@@ -34,28 +34,28 @@ class CreateAnAuthorizedAccountFragment : Fragment(R.layout.fragment_create_an_a
         val currentUser = auth.currentUser
 
         if (email == "") {
-            Toast.makeText(activity, R.string.e_mail_giriniz, Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, R.string.enter_email_tr, Toast.LENGTH_LONG).show()
         } else if (password == "") {
-            Toast.makeText(activity, R.string.sifre_giriniz, Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, R.string.enter_password_tr, Toast.LENGTH_LONG).show()
         } else {
             auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
 
                 val postMap = hashMapOf<String, Any>()
-                postMap["email"] = email
-                postMap["sifre"] = password
-                postMap["yetki"] = "guvenlik"
-                postMap["yonetici"] = currentUser?.email.toString()
+                postMap[getString(R.string.email)] = email
+                postMap[getString(R.string.password_tr)] = password
+                postMap[getString(R.string.authority_tr)] = getString(R.string.security_tr)
+                postMap[getString(R.string.manager_tr)] = currentUser?.email.toString()
 
-                firestore.collection("sirket").document(email).set(postMap).addOnCompleteListener {
+                firestore.collection(getString(R.string.company_tr)).document(email).set(postMap).addOnCompleteListener {
                     if (it.isSuccessful) {
                         if (auth.currentUser != null) {
                             auth.signOut()
-                            Toast.makeText(activity, R.string.yetki_olusturuldu, Toast.LENGTH_LONG)
+                            Toast.makeText(activity, R.string.authority_created_tr, Toast.LENGTH_LONG)
                                 .show()
                             findNavController().navigate(CreateAnAuthorizedAccountFragmentDirections.navigateToAdministratorLoginFragment())
                         }
                     } else {
-                        Toast.makeText(activity, R.string.hata_olustu, Toast.LENGTH_LONG).show()
+                        Toast.makeText(activity, R.string.error_occurred_tr, Toast.LENGTH_LONG).show()
                     }
                 }.addOnFailureListener {
                     Toast.makeText(activity, it.localizedMessage, Toast.LENGTH_LONG).show()

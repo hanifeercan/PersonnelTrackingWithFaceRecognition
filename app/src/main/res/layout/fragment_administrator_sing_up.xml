@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/yonetici_hesabi_olustur" />
+                android:text="@string/create_administrator_account_tr" />
 
             <EditText
                 android:id="@+id/et_mail"
@@ -76,7 +76,7 @@
                 android:layout_marginTop="@dimen/margin_32"
                 android:backgroundTint="@color/green_hornet"
                 android:paddingVertical="@dimen/margin_8"
-                android:text="@string/olustur"
+                android:text="@string/create_tr"
                 tools:ignore="VisualLintButtonSize" />
 
         </LinearLayout>

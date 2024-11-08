@@ -25,7 +25,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private val binding by viewBinding(FragmentHomeBinding::bind)
     private lateinit var viewModel: HomeViewModel
     private lateinit var firestore: FirebaseFirestore
-    private var authority: String = "guvenlik"
+    private var authority: String = getString(R.string.security_tr)
     private lateinit var onBackPressedCallback: OnBackPressedCallback
     private var adminMail: String? = null
 
@@ -37,13 +37,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         auth = Firebase.auth
         firestore = Firebase.firestore
-        firestore.collectionGroup("sirket").get().addOnSuccessListener { documents ->
+        firestore.collectionGroup(getString(R.string.company_tr)).get().addOnSuccessListener { documents ->
             for (document in documents) {
                 if (document.id == auth.currentUser?.email) {
-                    authority = document.get("yetki").toString()
+                    authority = document.get(getString(R.string.authority_tr)).toString()
                     bindUI(authority)
-                    adminMail = if (authority == "guvenlik") {
-                        document.get("yonetici").toString()
+                    adminMail = if (authority == getString(R.string.security_tr)) {
+                        document.get(getString(R.string.manager_tr)).toString()
                     } else {
                         auth.currentUser?.email
                     }
@@ -83,7 +83,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         if (adminMail.isNullOrEmpty()) {
             Toast.makeText(
                 requireContext(),
-                getString(R.string.try_again_after_your_authority_is_calculated),
+                getString(R.string.try_again_after_your_authority_is_calculated_tr),
                 Toast.LENGTH_LONG
             ).show()
         } else {
@@ -103,7 +103,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         if (adminMail.isNullOrEmpty()) {
             Toast.makeText(
                 requireContext(),
-                getString(R.string.try_again_after_your_authority_is_calculated),
+                getString(R.string.try_again_after_your_authority_is_calculated_tr),
                 Toast.LENGTH_LONG
             ).show()
         } else {

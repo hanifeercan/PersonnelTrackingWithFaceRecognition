@@ -29,7 +29,7 @@ class AdministratorSingUpFragment : Fragment(R.layout.fragment_administrator_sin
     }
 
     private fun login() {
-        Toast.makeText(activity, R.string.giris_yapabilirsiniz, Toast.LENGTH_LONG).show()
+        Toast.makeText(activity, R.string.can_login_tr, Toast.LENGTH_LONG).show()
         findNavController().popBackStack()
     }
 
@@ -38,22 +38,22 @@ class AdministratorSingUpFragment : Fragment(R.layout.fragment_administrator_sin
         val password = binding.etPassword.text.toString()
 
         if (email == "") {
-            Toast.makeText(activity, R.string.e_mail_giriniz, Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, R.string.enter_email_tr, Toast.LENGTH_LONG).show()
         } else if (password == "") {
-            Toast.makeText(activity, R.string.sifre_giriniz, Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, R.string.enter_password_tr, Toast.LENGTH_LONG).show()
         } else {
             auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
 
                 val postMap = hashMapOf<String, Any>()
-                postMap["email"] = email
-                postMap["sifre"] = password
-                postMap["yetki"] = "yonetici"
+                postMap[getString(R.string.email)] = email
+                postMap[getString(R.string.password_tr)] = password
+                postMap[getString(R.string.authority_tr)] = getString(R.string.manager_tr)
 
-                firestore.collection("sirket").document(email).set(postMap).addOnCompleteListener {
+                firestore.collection(getString(R.string.company_tr)).document(email).set(postMap).addOnCompleteListener {
                     if (it.isSuccessful) {
                         login()
                     } else {
-                        Toast.makeText(activity, R.string.hata_olustu, Toast.LENGTH_LONG).show()
+                        Toast.makeText(activity, R.string.error_occurred_tr, Toast.LENGTH_LONG).show()
                     }
                 }
             }

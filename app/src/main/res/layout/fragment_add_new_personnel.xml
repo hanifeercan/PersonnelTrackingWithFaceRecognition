@@ -70,7 +70,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:autofillHints=""
-                            android:hint="@string/isim"
+                            android:hint="@string/name_tr"
                             android:importantForAutofill="no"
                             android:inputType="text"
                             android:paddingHorizontal="@dimen/margin_16"
@@ -90,7 +90,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:autofillHints=""
-                            android:hint="@string/soyisim"
+                            android:hint="@string/surname_tr"
                             android:importantForAutofill="no"
                             android:inputType="text"
                             android:paddingHorizontal="@dimen/margin_16"
@@ -130,7 +130,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:autofillHints=""
-                            android:hint="@string/dogum_tarihi"
+                            android:hint="@string/birthday_tr"
                             android:importantForAutofill="no"
                             android:inputType="text"
                             android:paddingHorizontal="@dimen/margin_16"
@@ -150,7 +150,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:autofillHints=""
-                            android:hint="@string/departman"
+                            android:hint="@string/department_tr"
                             android:importantForAutofill="no"
                             android:inputType="text"
                             android:paddingHorizontal="@dimen/margin_16"
@@ -170,7 +170,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:autofillHints=""
-                            android:hint="@string/kayit_tarihi"
+                            android:hint="@string/registration_date_tr"
                             android:importantForAutofill="no"
                             android:inputType="text"
                             android:paddingHorizontal="@dimen/margin_16"
@@ -218,7 +218,7 @@
                         android:layout_marginTop="@dimen/margin_8"
                         android:backgroundTint="@color/transparent_green"
                         android:paddingHorizontal="@dimen/margin_32"
-                        android:text="@string/kaydet" />
+                        android:text="@string/save_tr" />
                 </LinearLayout>
             </FrameLayout>
 

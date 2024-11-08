@@ -68,7 +68,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:paddingHorizontal="@dimen/margin_16"
-                android:text="@string/isim"
+                android:text="@string/name_tr"
                 tools:ignore="VisualLintTextFieldSize" />
         </FrameLayout>
 
@@ -123,7 +123,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:paddingHorizontal="@dimen/margin_16"
-                    android:text="@string/dogum_tarihi_"
+                    android:text="@string/birthday_tr_"
                     tools:ignore="VisualLintTextFieldSize" />
 
                 <TextView
@@ -133,7 +133,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:paddingHorizontal="@dimen/margin_16"
-                    android:text="@string/dogum_tarihi"
+                    android:text="@string/birthday_tr"
                     tools:ignore="VisualLintTextFieldSize" />
             </LinearLayout>
 
@@ -151,7 +151,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:paddingHorizontal="@dimen/margin_16"
-                    android:text="@string/departman_"
+                    android:text="@string/department_tr_"
                     tools:ignore="VisualLintTextFieldSize" />
 
                 <TextView
@@ -161,7 +161,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:paddingHorizontal="@dimen/margin_16"
-                    android:text="@string/departman"
+                    android:text="@string/department_tr"
                     tools:ignore="VisualLintTextFieldSize" />
             </LinearLayout>
 
@@ -179,7 +179,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:paddingHorizontal="@dimen/margin_16"
-                    android:text="@string/kayit_tarihi_"
+                    android:text="@string/registration_date_tr_"
                     tools:ignore="VisualLintTextFieldSize" />
 
                 <TextView
@@ -189,7 +189,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:paddingHorizontal="@dimen/margin_16"
-                    android:text="@string/kayit_tarihi"
+                    android:text="@string/registration_date_tr"
                     tools:ignore="VisualLintTextFieldSize" />
             </LinearLayout>
         </LinearLayout>

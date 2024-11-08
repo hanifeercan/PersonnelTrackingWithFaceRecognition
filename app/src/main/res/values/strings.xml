@@ -7,62 +7,76 @@
     <string name="password">Şifre</string>
     <string name="login">GİRİŞ YAP</string>
     <string name="ic_security">Icon security</string>
-    <string name="giris">GİRİŞ</string>
-    <string name="yonetici_hesabin_yok_mu">Yönetici hesabın yok mu?</string>
-    <string name="kayit_ol">Kayıt Ol!</string>
-    <string name="yonetici_hesabi_olustur">YÖNETİCİ HESABI OLUŞTUR</string>
-    <string name="olustur">OLUŞTUR</string>
-    <string name="yetkilendirilmis_hesap_olustur">YETKİLENDİRİLMİŞ HESAP OLUŞTUR</string>
+    <string name="enter_tr">GİRİŞ</string>
+    <string name="havent_administrator_account_tr">Yönetici hesabın yok mu?</string>
+    <string name="sign_up">Kayıt Ol!</string>
+    <string name="create_administrator_account_tr">YÖNETİCİ HESABI OLUŞTUR</string>
+    <string name="create_tr">OLUŞTUR</string>
+    <string name="create_authorized_account_tr">YETKİLENDİRİLMİŞ HESAP OLUŞTUR</string>
 
-    <string name="e_mail_giriniz">Lütfen e-mail giriniz!</string>
-    <string name="sifre_giriniz">Lütfen şifre giriniz!</string>
-    <string name="giris_yapabilirsiniz">Hesabınız oluşturuldu, artık giriş yapabilirsiniz.</string>
+    <string name="enter_email_tr">Lütfen e-mail giriniz!</string>
+    <string name="enter_password_tr">Lütfen şifre giriniz!</string>
+    <string name="can_login_tr">Hesabınız oluşturuldu, artık giriş yapabilirsiniz.</string>
 
     <string name="email">email</string>
-    <string name="sifre">şifre</string>
-    <string name="yetki">yetki</string>
-    <string name="guvenlik">güvenlik</string>
-    <string name="yetki_olusturuldu">Yetkilendirme hesabı oluşturuldu. Karışıklık olmaması için tekrar giriş yapmalısınız!</string>
-    <string name="hata_olustu">Bir hata oluştu hesap sisteme kaydedilemedi!</string>
+    <string name="password_tr">şifre</string>
+    <string name="authority_tr">yetki</string>
+    <string name="security_tr">güvenlik</string>
+    <string name="manager_tr">yönetici</string>
+    <string name="authority_created_tr">Yetkilendirme hesabı oluşturuldu. Karışıklık olmaması için tekrar giriş yapmalısınız!</string>
+    <string name="error_occurred_tr">Bir hata oluştu hesap sisteme kaydedilemedi!</string>
 
-    <string name="personel_bilgileri">PERSONEL BİLGİLERİ</string>
-    <string name="giris_cikis_takibi">GİRİŞ ÇIKIŞ TAKİBİ</string>
-    <string name="yeni_personel_kayit">YENİ PERSONEL KAYIT</string>
-    <string name="yetkilendirme_hesabi_olustur">YENİ YETKİLENDİRME HESABI</string>
-    <string name="anlik_yuz_tanima">ANLIK YÜZ TANIMA</string>
-    <string name="bilinmeyen_giris_takip">BİLİNMEYEN GİRİŞ TAKİP</string>
+    <string name="personnel_information_tr">PERSONEL BİLGİLERİ</string>
+    <string name="entry_exit_tracking_tr">GİRİŞ ÇIKIŞ TAKİBİ</string>
+    <string name="new_personnel_registration_tr">YENİ PERSONEL KAYIT</string>
+    <string name="create_authorization_account_tr">YENİ YETKİLENDİRME HESABI</string>
+    <string name="instant_face_recognition_tr">ANLIK YÜZ TANIMA</string>
+    <string name="unknown_entry_tracking_tr">BİLİNMEYEN GİRİŞ TAKİP</string>
 
-    <string name="cıkıs">ÇIKIŞ</string>
+    <string name="exit_tr">ÇIKIŞ</string>
     <string name="ic_next">Ikon next</string>
 
-    <string name="isim">İsim</string>
-    <string name="soyisim">Soyisim</string>
+    <string name="name_tr">İsim</string>
+    <string name="surname_tr">Soyisim</string>
     <string name="tc">TC/Yabancı Kimlik Numarası </string>
-    <string name="dogum_tarihi">Doğum Tarihi</string>
-    <string name="departman">Departman/Birim</string>
-    <string name="kayit_tarihi">Kayıt Tarihi</string>
-    <string name="kaydet">KAYDET</string>
+    <string name="birthday_tr">Doğum Tarihi</string>
+    <string name="department_tr">Departman/Birim</string>
+    <string name="registration_date_tr">Kayıt Tarihi</string>
+    <string name="save_tr">KAYDET</string>
     <string name="add_photo">add_photo</string>
 
-    <string name="bu_alan_bos_birakilamaz">BU ALAN BOŞ BIRAKILAMAZ</string>
-    <string name="kayit_basarili">Kayıt başarılı!</string>
-    <string name="kayit_basarisiz">Kayıt başarısız!</string>
-    <string name="izin_gerekli">İzin gereklidir!</string>
+    <string name="cannot_be_empty_tr">BU ALAN BOŞ BIRAKILAMAZ</string>
+    <string name="registration_successful_tr">Kayıt başarılı!</string>
+    <string name="registration_failed_tr">Kayıt başarısız!</string>
+    <string name="permission_required_tr">İzin gereklidir!</string>
 
     <string name="tc_">Kimlik Numarası:</string>
-    <string name="dogum_tarihi_">Doğum Tarihi:</string>
-    <string name="departman_">Departman/Birim:</string>
-    <string name="kayit_tarihi_">Kayıt Tarihi:</string>
+    <string name="birthday_tr_">Doğum Tarihi:</string>
+    <string name="department_tr_">Departman/Birim:</string>
+    <string name="registration_date_tr_">Kayıt Tarihi:</string>
     <string name="not_found_folder">not found folder</string>
-    <string name="anonymous">Bilinmiyor</string>
-    <string name="no_connection">Servis bağlantısı sağlanamadı. Servisi yeniden başlatmayı deneyebilir ve bağlantı portlarını kontrol edebilirsiniz.</string>
-    <string name="camera">Kamera</string>
-    <string name="gallery">Galeri</string>
+    <string name="anonymous_tr">Bilinmiyor</string>
+    <string name="no_connection_tr">Servis bağlantısı sağlanamadı. Servisi yeniden başlatmayı deneyebilir ve bağlantı portlarını kontrol edebilirsiniz.</string>
+    <string name="camera_tr">Kamera</string>
+    <string name="gallery_tr">Galeri</string>
 
-    <string name="no_connection_for_backend">Servis bağlantısı sağlanamadı.</string>
-    <string name="failed_to_camera_initialize">Kamera Başlatılamadı!</string>
-    <string name="failed_to_gallery_initialize">Galeri Başlatılamadı!</string>
+    <string name="no_connection_for_backend_tr">Servis bağlantısı sağlanamadı.</string>
+    <string name="failed_to_camera_initialize_tr">Kamera Başlatılamadı!</string>
+    <string name="failed_to_gallery_initialize_tr">Galeri Başlatılamadı!</string>
 
-    <string name="please_add_video">Lütfen video ekleyiniz!</string>
-    <string name="try_again_after_your_authority_is_calculated">Yetkiniz hesaplandıktan sonra tekrar deneyiniz!</string>
+    <string name="please_add_video_tr">Lütfen video ekleyiniz!</string>
+    <string name="try_again_after_your_authority_is_calculated_tr">Yetkiniz hesaplandıktan sonra tekrar deneyiniz!</string>
+
+    <string name="company_tr">sirket</string>
+    <string name="downloadUrl">downloadUrl</string>
+    <string name="name">name</string>
+    <string name="surname">surname</string>
+    <string name="_tc">tc</string>
+    <string name="birthday">birthday</string>
+    <string name="department">department</string>
+    <string name="registrationDate">registrationDate</string>
+    <string name="personnel">personnel</string>
+    <string name="file_tr">dosya</string>
+    <string name="unknown">Unknown</string>
+    <string name="tracking">tracking</string>
 </resources>

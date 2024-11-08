@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/green_hornet"
-        android:text="@string/camera"
+        android:text="@string/camera_tr"
         android:textColor="@color/cream"
         app:layout_constraintBottom_toTopOf="@id/btn_gallery"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/green_hornet"
-        android:text="@string/gallery"
+        android:text="@string/gallery_tr"
         android:textColor="@color/cream"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/no_connection"
+        android:text="@string/no_connection_tr"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -135,7 +135,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:paddingHorizontal="@dimen/margin_16"
-                    android:text="@string/anonymous"
+                    android:text="@string/anonymous_tr"
                     tools:ignore="VisualLintTextFieldSize" />
             </FrameLayout>
 
@@ -162,7 +162,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:paddingHorizontal="@dimen/margin_16"
-                        android:text="@string/dogum_tarihi_"
+                        android:text="@string/birthday_tr_"
                         tools:ignore="VisualLintTextFieldSize" />
 
                     <TextView
@@ -172,7 +172,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:paddingHorizontal="@dimen/margin_16"
-                        android:text="@string/anonymous"
+                        android:text="@string/anonymous_tr"
                         tools:ignore="VisualLintTextFieldSize" />
                 </LinearLayout>
 
@@ -190,7 +190,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:paddingHorizontal="@dimen/margin_16"
-                        android:text="@string/departman_"
+                        android:text="@string/department_tr_"
                         tools:ignore="VisualLintTextFieldSize" />
 
                     <TextView
@@ -200,7 +200,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:paddingHorizontal="@dimen/margin_16"
-                        android:text="@string/anonymous"
+                        android:text="@string/anonymous_tr"
                         tools:ignore="VisualLintTextFieldSize" />
                 </LinearLayout>
             </LinearLayout>

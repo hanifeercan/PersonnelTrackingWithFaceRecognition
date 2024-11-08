@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/giris" />
+                android:text="@string/enter_tr" />
 
             <EditText
                 android:id="@+id/et_mail"
@@ -89,7 +89,7 @@
                     style="@style/Text.T1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/yonetici_hesabin_yok_mu" />
+                    android:text="@string/havent_administrator_account_tr" />
 
                 <TextView
                     android:id="@+id/tv_signup"
@@ -97,7 +97,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:text="@string/kayit_ol"
+                    android:text="@string/sign_up"
                     android:textColor="@color/transparent_black" />
             </FrameLayout>
         </LinearLayout>

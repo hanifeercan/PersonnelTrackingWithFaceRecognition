@@ -23,7 +23,7 @@ class MenuAdapter(private val menuList: List<MenuItem>, private val authority: S
                 itemClickListener?.invoke(item)
             }
             if (position != 5) {
-                if (authority == "yonetici") {
+                if (authority == root.context.getString(R.string.manager_tr)) {
                     root.isClickable = true
                     itemMenu.foreground =
                         AppCompatResources.getDrawable(root.context, R.color.transparent)

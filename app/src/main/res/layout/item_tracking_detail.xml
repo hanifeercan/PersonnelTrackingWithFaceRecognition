@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center_vertical"
-        android:text="@string/giris"
+        android:text="@string/enter_tr"
         android:layout_marginHorizontal="@dimen/margin_32"
         android:layout_marginVertical="@dimen/margin_32"
         tools:ignore="VisualLintTextFieldSize" />
@@ -43,7 +43,7 @@
         android:layout_height="match_parent"
         android:layout_marginHorizontal="@dimen/margin_32"
         android:gravity="center_vertical"
-        android:text="@string/cıkıs"
+        android:text="@string/exit_tr"
         android:layout_marginVertical="@dimen/margin_32"
         tools:ignore="VisualLintTextFieldSize" />
     </LinearLayout>

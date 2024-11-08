@@ -73,7 +73,7 @@ class AddNewPersonnelFragment : Fragment(R.layout.fragment_add_new_personnel) {
                         Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
                     activityResultLauncher.launch(intentToGallery)
                 } else {
-                    Toast.makeText(requireContext(), R.string.izin_gerekli, Toast.LENGTH_LONG)
+                    Toast.makeText(requireContext(), R.string.permission_required_tr, Toast.LENGTH_LONG)
                         .show()
                 }
             }
@@ -147,14 +147,14 @@ class AddNewPersonnelFragment : Fragment(R.layout.fragment_add_new_personnel) {
         val id = tc + "_" + names.joinToString("") + surnames.joinToString("")
 
         if (name == "" || surname == "" || tc == "" || firstVideoframes.isEmpty() || secondVideoframes.isEmpty()) {
-            if (name == "") etName.error = getString(R.string.bu_alan_bos_birakilamaz)
-            if (surname == "") etSurname.error = getString(R.string.bu_alan_bos_birakilamaz)
-            if (tc == "") etTc.error = getString(R.string.bu_alan_bos_birakilamaz) else TODO()
+            if (name == "") etName.error = getString(R.string.cannot_be_empty_tr)
+            if (surname == "") etSurname.error = getString(R.string.cannot_be_empty_tr)
+            if (tc == "") etTc.error = getString(R.string.cannot_be_empty_tr) else TODO()
             if (firstVideoframes.isEmpty()) {
-                Toast.makeText(activity, getString(R.string.please_add_video), Toast.LENGTH_LONG)
+                Toast.makeText(activity, getString(R.string.please_add_video_tr), Toast.LENGTH_LONG)
                     .show()
             } else if (secondVideoframes.isEmpty()) Toast.makeText(
-                activity, getString(R.string.please_add_video), Toast.LENGTH_LONG
+                activity, getString(R.string.please_add_video_tr), Toast.LENGTH_LONG
             ).show() else TODO()
         } else {
             scrollView.visibility = View.GONE
@@ -182,46 +182,46 @@ class AddNewPersonnelFragment : Fragment(R.layout.fragment_add_new_personnel) {
                 imageReference.putFile(selectedPicture!!).addOnCompleteListener {
                     if (it.isSuccessful) {
                         imageReference.downloadUrl.addOnSuccessListener { uri ->
-                            postMap["downloadUrl"] = uri.toString()
-                            postMap["name"] = name
-                            postMap["surname"] = surname
-                            postMap["tc"] = tc
-                            postMap["birthday"] = birthday
-                            postMap["department"] = department
-                            postMap["registrationDate"] = registrationDate
-                            val ref = firestore.collection("sirket")
-                                .document(currentUser?.email.toString()).collection("personnel")
+                            postMap[getString(R.string.downloadUrl)] = uri.toString()
+                            postMap[getString(R.string.name)] = name
+                            postMap[getString(R.string.surname)] = surname
+                            postMap[getString(R.string._tc)] = tc
+                            postMap[getString(R.string.birthday)] = birthday
+                            postMap[getString(R.string.department)] = department
+                            postMap[getString(R.string.registrationDate)] = registrationDate
+                            val ref = firestore.collection(getString(R.string.company_tr))
+                                .document(currentUser?.email.toString()).collection(getString(R.string.personnel))
                                 .document(id)
                             ref.set(postMap).addOnSuccessListener {
                                 Toast.makeText(
-                                    activity, R.string.kayit_basarili, Toast.LENGTH_LONG
+                                    activity, R.string.registration_successful_tr, Toast.LENGTH_LONG
                                 ).show()
                                 requireActivity().supportFragmentManager.popBackStack()
                             }.addOnFailureListener {
                                 Toast.makeText(
-                                    activity, R.string.kayit_basarisiz, Toast.LENGTH_LONG
+                                    activity, R.string.registration_failed_tr, Toast.LENGTH_LONG
                                 ).show()
                             }
                         }
                     }
                 }.addOnFailureListener {
-                    Toast.makeText(activity, R.string.kayit_basarisiz, Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity, R.string.registration_failed_tr, Toast.LENGTH_LONG).show()
                 }
             } else {
-                postMap["downloadUrl"] = ""
-                postMap["name"] = name
-                postMap["surname"] = surname
-                postMap["tc"] = tc
-                postMap["birthday"] = birthday
-                postMap["department"] = department
-                postMap["registrationDate"] = registrationDate
-                val ref = firestore.collection("sirket").document(currentUser?.email.toString())
-                    .collection("personnel").document(id)
+                postMap[getString(R.string.downloadUrl)] = ""
+                postMap[getString(R.string.name)] = name
+                postMap[getString(R.string.surname)] = surname
+                postMap[getString(R.string._tc)] = tc
+                postMap[getString(R.string.birthday)] = birthday
+                postMap[getString(R.string.department)] = department
+                postMap[getString(R.string.registrationDate)] = registrationDate
+                val ref = firestore.collection(getString(R.string.company_tr)).document(currentUser?.email.toString())
+                    .collection(getString(R.string.personnel)).document(id)
                 ref.set(postMap).addOnSuccessListener {
-                    Toast.makeText(activity, R.string.kayit_basarili, Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity, R.string.registration_successful_tr, Toast.LENGTH_LONG).show()
                     requireActivity().supportFragmentManager.popBackStack()
                 }.addOnFailureListener {
-                    Toast.makeText(activity, R.string.kayit_basarisiz, Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity, R.string.registration_failed_tr, Toast.LENGTH_LONG).show()
                     requireActivity().supportFragmentManager.popBackStack()
                 }
             }

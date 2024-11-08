@@ -41,9 +41,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         val password = binding.etPassword.text.toString()
 
         if (email == "") {
-            Toast.makeText(activity, R.string.e_mail_giriniz, Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, R.string.enter_email_tr, Toast.LENGTH_LONG).show()
         } else if (password == "") {
-            Toast.makeText(activity, R.string.sifre_giriniz, Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, R.string.enter_password_tr, Toast.LENGTH_LONG).show()
         } else {
             auth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
                 navigateToHomeFragment()

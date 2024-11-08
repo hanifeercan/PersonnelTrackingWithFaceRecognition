@@ -89,7 +89,7 @@ class InstantFaceRecognitionFragment : Fragment(R.layout.fragment_instant_face_r
 
         viewModel.isOnError.observe(viewLifecycleOwner) {
 
-            if (it == getString(R.string.no_connection_for_backend)) {
+            if (it == getString(R.string.no_connection_for_backend_tr)) {
                 binding.tvNoConnection.visibility = View.VISIBLE
                 binding.cl.visibility = View.GONE
                 binding.progressBar.visibility = View.GONE
@@ -114,7 +114,7 @@ class InstantFaceRecognitionFragment : Fragment(R.layout.fragment_instant_face_r
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(
                 requireContext(),
-                getString(R.string.failed_to_camera_initialize),
+                getString(R.string.failed_to_camera_initialize_tr),
                 Toast.LENGTH_LONG
             ).show()
         }
@@ -128,7 +128,7 @@ class InstantFaceRecognitionFragment : Fragment(R.layout.fragment_instant_face_r
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(
                 requireContext(),
-                getString(R.string.failed_to_gallery_initialize),
+                getString(R.string.failed_to_gallery_initialize_tr),
                 Toast.LENGTH_LONG
             ).show()
         }
@@ -163,15 +163,15 @@ class InstantFaceRecognitionFragment : Fragment(R.layout.fragment_instant_face_r
         val file = File(requireContext().cacheDir, "image.jpg")
         saveBitmapAsJpeg(imageBitmap, file)
         val requestFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
-        val body = MultipartBody.Part.createFormData("dosya", file.name, requestFile)
+        val body = MultipartBody.Part.createFormData(getString(R.string.file_tr), file.name, requestFile)
         postViewModel(body)
     }
 
     private fun getPersonnel() {
         if (response != null) {
-            if (response != "Unknown") {
+            if (response != getString(R.string.unknown)) {
                 val db = FirebaseFirestore.getInstance()
-                db.collection("sirket").document(adminMail).collection("personnel")
+                db.collection(getString(R.string.company_tr)).document(adminMail).collection(getString(R.string.personnel))
                     .addSnapshotListener { value, _ ->
                         if (value != null) {
                             if (!value.isEmpty) {
