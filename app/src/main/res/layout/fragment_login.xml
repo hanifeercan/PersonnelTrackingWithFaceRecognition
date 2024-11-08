@@ -98,7 +98,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:text="@string/sign_up"
-                    android:textColor="@color/transparent_black" />
+                    android:textColor="@color/transparent_black"
+                    tools:ignore="TextContrastCheck" />
             </FrameLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
