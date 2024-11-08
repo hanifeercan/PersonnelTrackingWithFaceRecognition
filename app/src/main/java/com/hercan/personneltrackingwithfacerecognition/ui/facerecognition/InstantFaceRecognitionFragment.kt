@@ -163,7 +163,8 @@ class InstantFaceRecognitionFragment : Fragment(R.layout.fragment_instant_face_r
         val file = File(requireContext().cacheDir, "image.jpg")
         saveBitmapAsJpeg(imageBitmap, file)
         val requestFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
-        val body = MultipartBody.Part.createFormData(getString(R.string.file_tr), file.name, requestFile)
+        val body =
+            MultipartBody.Part.createFormData(getString(R.string.file_tr), file.name, requestFile)
         postViewModel(body)
     }
 
@@ -171,8 +172,8 @@ class InstantFaceRecognitionFragment : Fragment(R.layout.fragment_instant_face_r
         if (response != null) {
             if (response != getString(R.string.unknown)) {
                 val db = FirebaseFirestore.getInstance()
-                db.collection(getString(R.string.company_tr)).document(adminMail).collection(getString(R.string.personnel))
-                    .addSnapshotListener { value, _ ->
+                db.collection(getString(R.string.company_tr)).document(adminMail)
+                    .collection(getString(R.string.personnel)).addSnapshotListener { value, _ ->
                         if (value != null) {
                             if (!value.isEmpty) {
                                 val doc = value.documents

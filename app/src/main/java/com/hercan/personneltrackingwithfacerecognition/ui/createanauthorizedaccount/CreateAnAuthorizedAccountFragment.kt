@@ -46,18 +46,25 @@ class CreateAnAuthorizedAccountFragment : Fragment(R.layout.fragment_create_an_a
                 postMap[getString(R.string.authority_tr)] = getString(R.string.security_tr)
                 postMap[getString(R.string.manager_tr)] = currentUser?.email.toString()
 
-                firestore.collection(getString(R.string.company_tr)).document(email).set(postMap).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        if (auth.currentUser != null) {
-                            auth.signOut()
-                            Toast.makeText(activity, R.string.authority_created_tr, Toast.LENGTH_LONG)
+                firestore.collection(getString(R.string.company_tr)).document(email).set(postMap)
+                    .addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            if (auth.currentUser != null) {
+                                auth.signOut()
+                                Toast.makeText(
+                                    activity,
+                                    R.string.authority_created_tr,
+                                    Toast.LENGTH_LONG
+                                ).show()
+                                findNavController().navigate(
+                                    CreateAnAuthorizedAccountFragmentDirections.navigateToAdministratorLoginFragment()
+                                )
+                            }
+                        } else {
+                            Toast.makeText(activity, R.string.error_occurred_tr, Toast.LENGTH_LONG)
                                 .show()
-                            findNavController().navigate(CreateAnAuthorizedAccountFragmentDirections.navigateToAdministratorLoginFragment())
                         }
-                    } else {
-                        Toast.makeText(activity, R.string.error_occurred_tr, Toast.LENGTH_LONG).show()
-                    }
-                }.addOnFailureListener {
+                    }.addOnFailureListener {
                     Toast.makeText(activity, it.localizedMessage, Toast.LENGTH_LONG).show()
                 }
             }

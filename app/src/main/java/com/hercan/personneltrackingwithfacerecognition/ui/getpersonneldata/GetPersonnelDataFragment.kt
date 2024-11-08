@@ -39,8 +39,8 @@ class GetPersonnelDataFragment : Fragment(R.layout.fragment_get_personnel_data) 
     private fun getData() {
         val currentUser = auth.currentUser
         val db = FirebaseFirestore.getInstance()
-        db.collection(getString(R.string.company_tr)).document(currentUser?.email.toString()).collection(getString(R.string.personnel))
-            .addSnapshotListener { value, _ ->
+        db.collection(getString(R.string.company_tr)).document(currentUser?.email.toString())
+            .collection(getString(R.string.personnel)).addSnapshotListener { value, _ ->
                 if (value != null) {
                     if (!value.isEmpty) {
                         val doc = value.documents

@@ -41,8 +41,8 @@ class DateListFragment : Fragment(R.layout.fragment_date_list) {
     private fun getData() {
         val currentUser = auth.currentUser
         val db = FirebaseFirestore.getInstance()
-        db.collection(getString(R.string.company_tr)).document(currentUser?.email.toString()).collection(getString(R.string.tracking))
-            .addSnapshotListener { value, _ ->
+        db.collection(getString(R.string.company_tr)).document(currentUser?.email.toString())
+            .collection(getString(R.string.tracking)).addSnapshotListener { value, _ ->
                 if (value != null) {
                     if (!value.isEmpty) {
                         val doc = value.documents

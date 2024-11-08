@@ -73,8 +73,11 @@ class AddNewPersonnelFragment : Fragment(R.layout.fragment_add_new_personnel) {
                         Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
                     activityResultLauncher.launch(intentToGallery)
                 } else {
-                    Toast.makeText(requireContext(), R.string.permission_required_tr, Toast.LENGTH_LONG)
-                        .show()
+                    Toast.makeText(
+                        requireContext(),
+                        R.string.permission_required_tr,
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             }
     }
@@ -190,8 +193,8 @@ class AddNewPersonnelFragment : Fragment(R.layout.fragment_add_new_personnel) {
                             postMap[getString(R.string.department)] = department
                             postMap[getString(R.string.registrationDate)] = registrationDate
                             val ref = firestore.collection(getString(R.string.company_tr))
-                                .document(currentUser?.email.toString()).collection(getString(R.string.personnel))
-                                .document(id)
+                                .document(currentUser?.email.toString())
+                                .collection(getString(R.string.personnel)).document(id)
                             ref.set(postMap).addOnSuccessListener {
                                 Toast.makeText(
                                     activity, R.string.registration_successful_tr, Toast.LENGTH_LONG
@@ -205,7 +208,8 @@ class AddNewPersonnelFragment : Fragment(R.layout.fragment_add_new_personnel) {
                         }
                     }
                 }.addOnFailureListener {
-                    Toast.makeText(activity, R.string.registration_failed_tr, Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity, R.string.registration_failed_tr, Toast.LENGTH_LONG)
+                        .show()
                 }
             } else {
                 postMap[getString(R.string.downloadUrl)] = ""
@@ -215,13 +219,16 @@ class AddNewPersonnelFragment : Fragment(R.layout.fragment_add_new_personnel) {
                 postMap[getString(R.string.birthday)] = birthday
                 postMap[getString(R.string.department)] = department
                 postMap[getString(R.string.registrationDate)] = registrationDate
-                val ref = firestore.collection(getString(R.string.company_tr)).document(currentUser?.email.toString())
+                val ref = firestore.collection(getString(R.string.company_tr))
+                    .document(currentUser?.email.toString())
                     .collection(getString(R.string.personnel)).document(id)
                 ref.set(postMap).addOnSuccessListener {
-                    Toast.makeText(activity, R.string.registration_successful_tr, Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity, R.string.registration_successful_tr, Toast.LENGTH_LONG)
+                        .show()
                     requireActivity().supportFragmentManager.popBackStack()
                 }.addOnFailureListener {
-                    Toast.makeText(activity, R.string.registration_failed_tr, Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity, R.string.registration_failed_tr, Toast.LENGTH_LONG)
+                        .show()
                     requireActivity().supportFragmentManager.popBackStack()
                 }
             }

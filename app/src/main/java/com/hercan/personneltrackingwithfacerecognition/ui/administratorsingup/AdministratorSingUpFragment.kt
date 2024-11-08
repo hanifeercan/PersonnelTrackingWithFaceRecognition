@@ -49,13 +49,15 @@ class AdministratorSingUpFragment : Fragment(R.layout.fragment_administrator_sin
                 postMap[getString(R.string.password_tr)] = password
                 postMap[getString(R.string.authority_tr)] = getString(R.string.manager_tr)
 
-                firestore.collection(getString(R.string.company_tr)).document(email).set(postMap).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        login()
-                    } else {
-                        Toast.makeText(activity, R.string.error_occurred_tr, Toast.LENGTH_LONG).show()
+                firestore.collection(getString(R.string.company_tr)).document(email).set(postMap)
+                    .addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            login()
+                        } else {
+                            Toast.makeText(activity, R.string.error_occurred_tr, Toast.LENGTH_LONG)
+                                .show()
+                        }
                     }
-                }
             }
         }
     }
