@@ -21,7 +21,8 @@
             android:layout_height="@dimen/size_132"
             android:layout_marginHorizontal="@dimen/margin_24"
             android:layout_marginTop="@dimen/margin_8"
-            android:layout_marginBottom="@dimen/margin_24" />
+            android:layout_marginBottom="@dimen/margin_24"
+            android:contentDescription="@string/photo_tr" />
 
         <TextView
             android:id="@+id/tv_time"
