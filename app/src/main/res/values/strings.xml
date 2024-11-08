@@ -62,4 +62,6 @@
     <string name="no_connection_for_backend">Servis bağlantısı sağlanamadı.</string>
     <string name="failed_to_camera_initialize">Kamera Başlatılamadı!</string>
     <string name="failed_to_gallery_initialize">Galeri Başlatılamadı!</string>
+
+    <string name="please_add_video">Lütfen video ekleyiniz!</string>
 </resources>

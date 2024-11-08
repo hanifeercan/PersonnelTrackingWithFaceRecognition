@@ -151,9 +151,10 @@ class AddNewPersonnelFragment : Fragment(R.layout.fragment_add_new_personnel) {
             if (surname == "") etSurname.error = getString(R.string.bu_alan_bos_birakilamaz)
             if (tc == "") etTc.error = getString(R.string.bu_alan_bos_birakilamaz) else TODO()
             if (firstVideoframes.isEmpty()) {
-                Toast.makeText(activity, getString(R.string.please_Add_video), Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, getString(R.string.please_add_video), Toast.LENGTH_LONG)
+                    .show()
             } else if (secondVideoframes.isEmpty()) Toast.makeText(
-                activity, getString(R.string.please_Add_video), Toast.LENGTH_LONG
+                activity, getString(R.string.please_add_video), Toast.LENGTH_LONG
             ).show() else TODO()
         } else {
             scrollView.visibility = View.GONE
