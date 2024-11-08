@@ -15,12 +15,12 @@
         android:layout_width="@dimen/size_100"
         android:layout_height="@dimen/size_100"
         android:background="@drawable/ic_not_folder"
+        android:contentDescription="@string/not_found_folder"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/not_found_folder" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
