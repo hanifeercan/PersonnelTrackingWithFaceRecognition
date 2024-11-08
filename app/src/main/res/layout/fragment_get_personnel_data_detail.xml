@@ -87,7 +87,8 @@
                 android:layout_marginVertical="@dimen/margin_8"
                 android:background="@drawable/bg_card_view"
                 android:backgroundTint="@color/green_spring_rain"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="TextSizeCheck">
 
                 <TextView
                     style="@style/Text.T1"
@@ -143,7 +144,8 @@
                 android:layout_marginVertical="@dimen/margin_8"
                 android:background="@drawable/bg_card_view"
                 android:backgroundTint="@color/green_spring_rain"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="TextSizeCheck">
 
                 <TextView
                     style="@style/Text.T1"
