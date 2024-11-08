@@ -21,8 +21,8 @@
     <string name="email">email</string>
     <string name="password_tr">şifre</string>
     <string name="authority_tr">yetki</string>
-    <string name="security_tr">güvenlik</string>
-    <string name="manager_tr">yönetici</string>
+    <string name="security_tr">guvenlik</string>
+    <string name="manager_tr">yonetici</string>
     <string name="authority_created_tr">Yetkilendirme hesabı oluşturuldu. Karışıklık olmaması için tekrar giriş yapmalısınız!</string>
     <string name="error_occurred_tr">Bir hata oluştu hesap sisteme kaydedilemedi!</string>
 
