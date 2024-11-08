@@ -115,8 +115,8 @@ class AddNewPersonnelFragment : Fragment(R.layout.fragment_add_new_personnel) {
 
     private fun addNewPerson() = with(binding) {
 
-        val name = etName.text.toString()
-        val surname = etSurname.text.toString()
+        var name = etName.text.toString()
+        var surname = etSurname.text.toString()
         val birthday = etBirthday.text.toString()
         val tc = etTc.text.toString()
         val department = etDepartment.text.toString()
@@ -127,6 +127,21 @@ class AddNewPersonnelFragment : Fragment(R.layout.fragment_add_new_personnel) {
         } else {
             etRegistrationDate.text.toString()
         }
+
+        val names = name.split(" ").map { str ->
+            str.lowercase()
+                .replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
+        }
+
+        val surnames = surname.split(" ").map { str ->
+            str.lowercase()
+                .replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
+        }
+
+        name = names.joinToString(" ")
+        surname = surnames.joinToString(" ")
+
+        val id = tc + "_" + names.joinToString("") + surnames.joinToString("")
 
         if (name == "" || surname == "" || tc == "" || firstVideoframes.isEmpty() || secondVideoframes.isEmpty()) {
             if (name == "") etName.error = getString(R.string.bu_alan_bos_birakilamaz)
@@ -145,18 +160,18 @@ class AddNewPersonnelFragment : Fragment(R.layout.fragment_add_new_personnel) {
             if (selectedPicture != null) {
                 val reference = storage.reference
                 val imageReference =
-                    reference.child("${currentUser?.email.toString()}/personnel/$name.jpg")
+                    reference.child("${currentUser?.email.toString()}/personnel/$id.jpg")
                 firstVideoframes.forEachIndexed { index, bitmap ->
                     val uri = bitmapToUri(bitmap)
                     uri?.let {
-                        reference.child("${currentUser?.email.toString()}/faceData/train/{${name.lowercase()}}/${name + index.toString()}.jpg")
+                        reference.child("${currentUser?.email.toString()}/faceData/train/$id/${id + index.toString()}.jpg")
                             .putFile(it)
                     }
                 }
                 secondVideoframes.forEachIndexed { index, bitmap ->
                     val uri = bitmapToUri(bitmap)
                     uri?.let {
-                        reference.child("${currentUser?.email.toString()}/faceData/test/{${name.lowercase()}}/${name + index.toString()}.jpg")
+                        reference.child("${currentUser?.email.toString()}/faceData/test/$id/${id + index.toString()}.jpg")
                             .putFile(it)
                     }
                 }
@@ -172,7 +187,7 @@ class AddNewPersonnelFragment : Fragment(R.layout.fragment_add_new_personnel) {
                             postMap["registrationDate"] = registrationDate
                             val ref = firestore.collection("sirket")
                                 .document(currentUser?.email.toString()).collection("personnel")
-                                .document(name)
+                                .document(id)
                             ref.set(postMap).addOnSuccessListener {
                                 Toast.makeText(
                                     activity, R.string.kayit_basarili, Toast.LENGTH_LONG
@@ -197,7 +212,7 @@ class AddNewPersonnelFragment : Fragment(R.layout.fragment_add_new_personnel) {
                 postMap["department"] = department
                 postMap["registrationDate"] = registrationDate
                 val ref = firestore.collection("sirket").document(currentUser?.email.toString())
-                    .collection("personnel").document(name)
+                    .collection("personnel").document(id)
                 ref.set(postMap).addOnSuccessListener {
                     Toast.makeText(activity, R.string.kayit_basarili, Toast.LENGTH_LONG).show()
                     requireActivity().supportFragmentManager.popBackStack()
