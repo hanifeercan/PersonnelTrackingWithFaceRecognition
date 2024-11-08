@@ -20,11 +20,8 @@ class PersonnelListAdapter(private val menuList: List<Personnel>) :
             text.text = item.name
             if (item.photo != "") {
                 image.setBackgroundResource(0)
-                Picasso.get()
-                    .load(item.photo)
-                    .error(R.drawable.ic_photo)
-                    .placeholder(R.drawable.ic_photo)
-                    .into(image)
+                Picasso.get().load(item.photo).error(R.drawable.ic_photo)
+                    .placeholder(R.drawable.ic_photo).into(image)
             }
             root.setOnClickListener {
                 itemClickListener?.invoke(item)

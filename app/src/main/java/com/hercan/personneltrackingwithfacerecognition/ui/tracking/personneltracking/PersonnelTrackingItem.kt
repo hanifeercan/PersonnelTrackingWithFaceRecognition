@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
+@Suppress("DEPRECATED_ANNOTATION")
 @Parcelize
 data class PersonnelTrackingItem(
     val name: String,

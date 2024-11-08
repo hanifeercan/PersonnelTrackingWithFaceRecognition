@@ -19,11 +19,8 @@ class StrangerTrackingListAdapter :
 
             if (item.photoUrl != "") {
                 image.setBackgroundResource(0)
-                Picasso.get()
-                    .load(item.photoUrl)
-                    .error(R.drawable.ic_photo)
-                    .placeholder(R.drawable.ic_photo)
-                    .into(image)
+                Picasso.get().load(item.photoUrl).error(R.drawable.ic_photo)
+                    .placeholder(R.drawable.ic_photo).into(image)
                 tvTime.text = item.time
             }
 

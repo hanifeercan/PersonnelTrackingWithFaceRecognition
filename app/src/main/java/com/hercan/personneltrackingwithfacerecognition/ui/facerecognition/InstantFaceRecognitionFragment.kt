@@ -112,7 +112,11 @@ class InstantFaceRecognitionFragment : Fragment(R.layout.fragment_instant_face_r
         try {
             startActivityForResult(takePictureIntent, 1)
         } catch (e: ActivityNotFoundException) {
-            Toast.makeText(requireContext(), getString(R.string.failed_to_camera_initialize), Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                requireContext(),
+                getString(R.string.failed_to_camera_initialize),
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 
@@ -122,7 +126,11 @@ class InstantFaceRecognitionFragment : Fragment(R.layout.fragment_instant_face_r
         try {
             startActivityForResult(pickPhotoIntent, 2)
         } catch (e: ActivityNotFoundException) {
-            Toast.makeText(requireContext(), getString(R.string.failed_to_gallery_initialize), Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                requireContext(),
+                getString(R.string.failed_to_gallery_initialize),
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 

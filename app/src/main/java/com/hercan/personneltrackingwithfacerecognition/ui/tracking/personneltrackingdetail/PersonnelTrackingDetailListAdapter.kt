@@ -7,8 +7,7 @@ import com.hercan.personneltrackingwithfacerecognition.databinding.ItemTrackingD
 import com.hercan.personneltrackingwithfacerecognition.ui.tracking.personneltracking.TrackingTimes
 
 class PersonnelTrackingDetailListAdapter(
-    private val login: ArrayList<TrackingTimes>,
-    private val out: ArrayList<TrackingTimes>
+    private val login: ArrayList<TrackingTimes>, private val out: ArrayList<TrackingTimes>
 ) : RecyclerView.Adapter<PersonnelTrackingDetailListAdapter.ViewHolder>() {
 
     inner class ViewHolder(

@@ -37,33 +37,29 @@ class StrangerTrackingListFragment : Fragment(R.layout.fragment_stranger_trackin
     private fun getData() {
         val db = FirebaseStorage.getInstance()
         db.reference.child(datePath).listAll().addOnSuccessListener { listResult ->
-                if (listResult.items.isEmpty()) {
-                    binding.progressBar.visibility = View.GONE
-                    binding.ivNotFolder.visibility = View.VISIBLE
-                    binding.recyclerView.visibility = View.GONE
-                } else {
-                    for (item in listResult.items) {
-                        item.downloadUrl.addOnSuccessListener { uri ->
-                            var time = ""
-                            item.metadata.addOnSuccessListener { metadata ->
-                                val creationTimeMillis = metadata.creationTimeMillis
-                                if (creationTimeMillis != null) {
-                                    time = Date(creationTimeMillis).toString()
-                                }
-                                list.add(StrangerTrackingModel(time, uri.toString()))
-                                adapter.submitList(list)
-                            }
-                        }
-                    }
-                    binding.progressBar.visibility = View.GONE
-                    binding.ivNotFolder.visibility = View.GONE
-                    binding.recyclerView.visibility = View.VISIBLE
-                    //  bindAdapter()
-                }
-            }.addOnFailureListener { _ ->
+            if (listResult.items.isEmpty()) {
                 binding.progressBar.visibility = View.GONE
                 binding.ivNotFolder.visibility = View.VISIBLE
                 binding.recyclerView.visibility = View.GONE
+            } else {
+                for (item in listResult.items) {
+                    item.downloadUrl.addOnSuccessListener { uri ->
+                        item.metadata.addOnSuccessListener { metadata ->
+                            val creationTimeMillis = metadata.creationTimeMillis
+                            val time = Date(creationTimeMillis).toString()
+                            list.add(StrangerTrackingModel(time, uri.toString()))
+                            adapter.submitList(list)
+                        }
+                    }
+                }
+                binding.progressBar.visibility = View.GONE
+                binding.ivNotFolder.visibility = View.GONE
+                binding.recyclerView.visibility = View.VISIBLE
             }
+        }.addOnFailureListener { _ ->
+            binding.progressBar.visibility = View.GONE
+            binding.ivNotFolder.visibility = View.VISIBLE
+            binding.recyclerView.visibility = View.GONE
+        }
     }
 }
