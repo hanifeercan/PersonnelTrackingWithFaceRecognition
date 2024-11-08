@@ -79,4 +79,7 @@
     <string name="file_tr">dosya</string>
     <string name="unknown">Unknown</string>
     <string name="tracking">tracking</string>
+    <string name="add_face_video_tr">Kişiye ait 2 ayrı yüz videosu ekleyiniz!</string>
+    <string name="first_video_icon_tr">İlk video ikon</string>
+    <string name="second_video_icon_tr">İkinci video ikon</string>
 </resources>
