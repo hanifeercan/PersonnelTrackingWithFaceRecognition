@@ -24,6 +24,46 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:indeterminateTint="@color/transparent_green"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green_hornet"
+        android:text="@string/camera"
+        android:textColor="@color/cream"
+        app:layout_constraintBottom_toTopOf="@id/btn_gallery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/btn_gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green_hornet"
+        android:text="@string/gallery"
+        android:textColor="@color/cream"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_camera"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tv_no_connection"
+        style="@style/Text.T3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/no_connection"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +72,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -94,7 +135,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:paddingHorizontal="@dimen/margin_16"
-                    android:text="@string/isim"
+                    android:text="@string/anonymous"
                     tools:ignore="VisualLintTextFieldSize" />
             </FrameLayout>
 
@@ -131,7 +172,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:paddingHorizontal="@dimen/margin_16"
-                        android:text="@string/dogum_tarihi"
+                        android:text="@string/anonymous"
                         tools:ignore="VisualLintTextFieldSize" />
                 </LinearLayout>
 
@@ -159,7 +200,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:paddingHorizontal="@dimen/margin_16"
-                        android:text="@string/departman"
+                        android:text="@string/anonymous"
                         tools:ignore="VisualLintTextFieldSize" />
                 </LinearLayout>
             </LinearLayout>

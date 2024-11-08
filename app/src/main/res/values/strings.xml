@@ -54,4 +54,8 @@
     <string name="departman_">Departman/Birim:</string>
     <string name="kayit_tarihi_">Kayıt Tarihi:</string>
     <string name="not_found_folder">not found folder</string>
+    <string name="anonymous">Bilinmiyor</string>
+    <string name="no_connection">Servis bağlantısı sağlanamadı. Servisi yeniden başlatmayı deneyebilir ve bağlantı portlarını kontrol edebilirsiniz.</string>
+    <string name="camera">Kamera</string>
+    <string name="gallery">Galeri</string>
 </resources>
