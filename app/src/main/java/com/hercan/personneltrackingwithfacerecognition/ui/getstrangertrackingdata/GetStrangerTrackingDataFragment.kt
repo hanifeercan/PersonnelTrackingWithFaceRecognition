@@ -11,6 +11,8 @@ import com.hercan.personneltrackingwithfacerecognition.R
 import com.hercan.personneltrackingwithfacerecognition.binding.viewBinding
 import com.hercan.personneltrackingwithfacerecognition.databinding.FragmentGetStrangerTrackingDataBinding
 import com.hercan.personneltrackingwithfacerecognition.ui.tracking.datelist.TrackingDateListAdapter
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class GetStrangerTrackingDataFragment : Fragment(R.layout.fragment_get_stranger_tracking_data) {
 
@@ -39,27 +41,29 @@ class GetStrangerTrackingDataFragment : Fragment(R.layout.fragment_get_stranger_
     private fun getData() {
         val db = FirebaseStorage.getInstance()
         db.reference.child("$email/unknown").listAll().addOnSuccessListener { listResult ->
-                if (listResult.prefixes.isEmpty()) {
-                    binding.progressBar.visibility = View.GONE
-                    binding.ivNotFolder.visibility = View.VISIBLE
-                    binding.rvDateList.visibility = View.GONE
-                } else {
-                    for (item in listResult.prefixes) {
-                        list.add(item.name)
-                        binding.progressBar.visibility = View.GONE
-                        binding.ivNotFolder.visibility = View.GONE
-                        binding.rvDateList.visibility = View.VISIBLE
-                    }
-                    bindAdapter()
-                }
-            }.addOnFailureListener { _ ->
+            if (listResult.prefixes.isEmpty()) {
                 binding.progressBar.visibility = View.GONE
                 binding.ivNotFolder.visibility = View.VISIBLE
                 binding.rvDateList.visibility = View.GONE
+            } else {
+                for (item in listResult.prefixes) {
+                    list.add(item.name)
+                    binding.progressBar.visibility = View.GONE
+                    binding.ivNotFolder.visibility = View.GONE
+                    binding.rvDateList.visibility = View.VISIBLE
+                }
+                bindAdapter()
             }
+        }.addOnFailureListener { _ ->
+            binding.progressBar.visibility = View.GONE
+            binding.ivNotFolder.visibility = View.VISIBLE
+            binding.rvDateList.visibility = View.GONE
+        }
     }
 
     private fun bindAdapter() {
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        list = list.sortedByDescending { dateFormat.parse(it) }.map { it }.toCollection(ArrayList())
         adapter = TrackingDateListAdapter(list)
         binding.rvDateList.adapter = adapter
         adapter.setItemClickListener {

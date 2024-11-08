@@ -12,6 +12,8 @@ import com.google.firebase.ktx.Firebase
 import com.hercan.personneltrackingwithfacerecognition.R
 import com.hercan.personneltrackingwithfacerecognition.binding.viewBinding
 import com.hercan.personneltrackingwithfacerecognition.databinding.FragmentDateListBinding
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class DateListFragment : Fragment(R.layout.fragment_date_list) {
 
@@ -71,6 +73,8 @@ class DateListFragment : Fragment(R.layout.fragment_date_list) {
     }
 
     private fun bindAdapter() {
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        list = list.sortedByDescending { dateFormat.parse(it) }.map { it }.toCollection(ArrayList())
         adapter = TrackingDateListAdapter(list)
         binding.rvDateList.adapter = adapter
         adapter.setItemClickListener {
