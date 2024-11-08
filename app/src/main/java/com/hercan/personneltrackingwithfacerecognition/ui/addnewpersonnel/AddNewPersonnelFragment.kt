@@ -1,5 +1,6 @@
 package com.hercan.personneltrackingwithfacerecognition.ui.addnewpersonnel
 
+import android.annotation.SuppressLint
 import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -29,6 +30,7 @@ import java.io.FileOutputStream
 import java.text.SimpleDateFormat
 import java.util.Calendar
 
+@Suppress("DEPRECATION")
 class AddNewPersonnelFragment : Fragment(R.layout.fragment_add_new_personnel) {
 
     private val binding by viewBinding(FragmentAddNewPersonnelBinding::bind)
@@ -113,6 +115,7 @@ class AddNewPersonnelFragment : Fragment(R.layout.fragment_add_new_personnel) {
         return Uri.fromFile(file)
     }
 
+    @SuppressLint("SimpleDateFormat")
     private fun addNewPerson() = with(binding) {
 
         var name = etName.text.toString()
@@ -148,9 +151,9 @@ class AddNewPersonnelFragment : Fragment(R.layout.fragment_add_new_personnel) {
             if (surname == "") etSurname.error = getString(R.string.bu_alan_bos_birakilamaz)
             if (tc == "") etTc.error = getString(R.string.bu_alan_bos_birakilamaz) else TODO()
             if (firstVideoframes.isEmpty()) {
-                Toast.makeText(activity, "Lütfen video ekleyiniz!", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, getString(R.string.please_Add_video), Toast.LENGTH_LONG).show()
             } else if (secondVideoframes.isEmpty()) Toast.makeText(
-                activity, "Lütfen video ekleyiniz!", Toast.LENGTH_LONG
+                activity, getString(R.string.please_Add_video), Toast.LENGTH_LONG
             ).show() else TODO()
         } else {
             scrollView.visibility = View.GONE
@@ -253,12 +256,14 @@ class AddNewPersonnelFragment : Fragment(R.layout.fragment_add_new_personnel) {
         }
     }
 
+    @SuppressLint("IntentReset")
     private fun addVideo() {
         val videoIntent = Intent(Intent.ACTION_PICK, MediaStore.Video.Media.EXTERNAL_CONTENT_URI)
         videoIntent.type = "video/*"
         startActivityForResult(videoIntent, 1001)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
