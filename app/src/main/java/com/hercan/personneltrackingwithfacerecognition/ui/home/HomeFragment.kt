@@ -25,7 +25,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private val binding by viewBinding(FragmentHomeBinding::bind)
     private lateinit var viewModel: HomeViewModel
     private lateinit var firestore: FirebaseFirestore
-    private var authority: String = getString(R.string.security_tr)
+    private var authority: String = "guvenlik"
     private lateinit var onBackPressedCallback: OnBackPressedCallback
     private var adminMail: String? = null
 
@@ -37,19 +37,20 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         auth = Firebase.auth
         firestore = Firebase.firestore
-        firestore.collectionGroup(getString(R.string.company_tr)).get().addOnSuccessListener { documents ->
-            for (document in documents) {
-                if (document.id == auth.currentUser?.email) {
-                    authority = document.get(getString(R.string.authority_tr)).toString()
-                    bindUI(authority)
-                    adminMail = if (authority == getString(R.string.security_tr)) {
-                        document.get(getString(R.string.manager_tr)).toString()
-                    } else {
-                        auth.currentUser?.email
+        firestore.collectionGroup(getString(R.string.company_tr)).get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    if (document.id == auth.currentUser?.email) {
+                        authority = document.get(getString(R.string.authority_tr)).toString()
+                        bindUI(authority)
+                        adminMail = if (authority == getString(R.string.security_tr)) {
+                            document.get(getString(R.string.manager_tr)).toString()
+                        } else {
+                            auth.currentUser?.email
+                        }
                     }
                 }
             }
-        }
         onBackPressedCallback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 requireActivity().finish()
