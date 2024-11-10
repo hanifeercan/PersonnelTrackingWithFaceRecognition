@@ -30,7 +30,6 @@ import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
-import java.util.Locale
 
 @Suppress("DEPRECATION")
 @AndroidEntryPoint
@@ -178,15 +177,7 @@ class InstantFaceRecognitionFragment : Fragment(R.layout.fragment_instant_face_r
                             if (!value.isEmpty) {
                                 val doc = value.documents
                                 for (item in doc) {
-                                    if (response!!.replaceFirstChar {
-                                            if (it.isLowerCase()) it.titlecase(
-                                                Locale.getDefault()
-                                            ) else it.toString()
-                                        } == item.id.replaceFirstChar {
-                                            if (it.isLowerCase()) it.titlecase(
-                                                Locale.getDefault()
-                                            ) else it.toString()
-                                        }) {
+                                    if (response == item.id) {
                                         val personnel = item.toPersonnel()
                                         bindPersonnel(personnel)
                                     }
